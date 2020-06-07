@@ -15,11 +15,13 @@
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
 
-        const static int maxColorCount = 8;
+        const static int maxRegionCount = 8;
+        const static float epsilon = 1E-4;
 
-        int baseColorCount;
-        float3 baseColors[maxColorCount];
-        float baseStartHeights[maxColorCount];
+        int regionCount;
+        float3 baseColors[maxRegionCount];
+        float baseStartHeights[maxRegionCount];
+        float baseBlends[maxRegionCount];
 
         float minHeight;
         float maxHeight;
@@ -37,8 +39,8 @@
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
             float heightPercent = inverseLerp(minHeight, maxHeight, IN.worldPos.y);
-            for (int i = 0; i < baseColorCount && i < maxColorCount; i++) {
-                float drawStrength = saturate(sign(heightPercent - baseStartHeights[i]));
+            for (int i = 0; i < regionCount && i < maxRegionCount; i++) {
+                float drawStrength = inverseLerp(-baseBlends[i]/2, baseBlends[i]/2 ,heightPercent - baseStartHeights[i]);
                 o.Albedo = o.Albedo * (1 - drawStrength) + baseColors[i] * drawStrength;
             }
         }

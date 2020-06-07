@@ -11,7 +11,12 @@ public class InfiniteTerrain : MonoBehaviour {
     public Transform viewer;
     public Material mapMaterial;
 
-    public static Vector2 viewerPos;
+    public static Vector2 _viewerPos;
+    public Vector2 viewerPos {
+        get {
+            return _viewerPos;
+        }
+    }
     static MapGenerator mapGenerator;
     int chunkSize;
     int chunkVisibleInViewDis;
@@ -23,7 +28,7 @@ public class InfiniteTerrain : MonoBehaviour {
         maxViewDst = detailLevels[detailLevels.Length - 1].visibleDstThreshold;
         mapGenerator = FindObjectOfType<MapGenerator> ();
         if (viewer == null) {
-            viewer = GameObject.FindWithTag("Player").transform;
+            viewer = GameObject.FindWithTag ("Player").transform;
         }
         chunkSize = MapGenerator.mapChunkSize - 1;
         chunkVisibleInViewDis = Mathf.RoundToInt (maxViewDst / chunkSize);
@@ -31,9 +36,9 @@ public class InfiniteTerrain : MonoBehaviour {
     }
 
     private void Update () {
-        viewerPos = new Vector2 (viewer.position.x, viewer.position.z) / mapGenerator.terrainSettings.uniformScale;
-        if ((oldViewerPos - viewerPos).sqrMagnitude > sqrViewerThesholdToUpdate) {
-            oldViewerPos = viewerPos;
+        _viewerPos = new Vector2 (viewer.position.x, viewer.position.z) / mapGenerator.terrainSettings.uniformScale;
+        if ((oldViewerPos - _viewerPos).sqrMagnitude > sqrViewerThesholdToUpdate) {
+            oldViewerPos = _viewerPos;
             UpdateVisibleChunk ();
         }
     }
@@ -44,8 +49,8 @@ public class InfiniteTerrain : MonoBehaviour {
         }
         chunksVisibleLastUpdate.Clear ();
 
-        int currentChunkOffsetX = Mathf.RoundToInt (viewerPos.x / chunkSize);
-        int currentChunkOffsetY = Mathf.RoundToInt (viewerPos.y / chunkSize);
+        int currentChunkOffsetX = Mathf.RoundToInt (_viewerPos.x / chunkSize);
+        int currentChunkOffsetY = Mathf.RoundToInt (_viewerPos.y / chunkSize);
 
         for (int yOffset = -chunkVisibleInViewDis; yOffset <= chunkVisibleInViewDis; yOffset++) {
             for (int xOffset = -chunkVisibleInViewDis; xOffset <= chunkVisibleInViewDis; xOffset++) {
@@ -59,9 +64,37 @@ public class InfiniteTerrain : MonoBehaviour {
         }
     }
 
+    public Vector2 worldPosToChunkPos(Vector3 position) {
+        return new Vector2 (position.x, position.z) / mapGenerator.terrainSettings.uniformScale;
+    }
+
+    public TerrainChunk getChunkOfPoint (Vector2 pos) {
+        int currentChunkOffsetX = Mathf.RoundToInt (pos.x / chunkSize);
+        int currentChunkOffsetY = Mathf.RoundToInt (pos.y / chunkSize);
+
+        Vector2 viewedChunkCoord = new Vector2 (currentChunkOffsetX, currentChunkOffsetY);
+        if (chunkDictionary.ContainsKey (viewedChunkCoord)) {
+            return chunkDictionary[viewedChunkCoord];
+        } else {
+            return null;
+        }
+    }
+
+    public TerrainChunk getCurrentChunk () {
+        int currentChunkOffsetX = Mathf.RoundToInt (_viewerPos.x / chunkSize);
+        int currentChunkOffsetY = Mathf.RoundToInt (_viewerPos.y / chunkSize);
+
+        Vector2 viewedChunkCoord = new Vector2 (currentChunkOffsetX, currentChunkOffsetY);
+        if (chunkDictionary.ContainsKey (viewedChunkCoord)) {
+            return chunkDictionary[viewedChunkCoord];
+        } else {
+            return null;
+        }
+    }
+
     public class TerrainChunk {
         GameObject meshObject;
-        Vector2 pos;
+        public Vector2 pos;
         Bounds bounds;
 
         MeshRenderer meshRenderer;
@@ -74,7 +107,17 @@ public class InfiniteTerrain : MonoBehaviour {
 
         MapData mapData;
         bool mapDataReceived;
+        public bool mapReceived {
+            get {
+                return mapDataReceived;
+            }
+        }
         int previousLODIndex = -1;
+        public MapData map {
+            get {
+                return mapData;
+            }
+        }
 
         public TerrainChunk (Vector2 coord, int size, LODInfo[] detailLevels, Transform parent, Material material) {
             this.detailLevels = detailLevels;
@@ -83,6 +126,7 @@ public class InfiniteTerrain : MonoBehaviour {
             Vector3 posV3 = new Vector3 (pos.x, 0, pos.y);
 
             meshObject = new GameObject ("Chunk");
+            meshObject.tag = "Chunk";
             meshRenderer = meshObject.AddComponent<MeshRenderer> ();
             meshFilter = meshObject.AddComponent<MeshFilter> ();
             meshCollider = meshObject.AddComponent<MeshCollider> ();
@@ -105,7 +149,7 @@ public class InfiniteTerrain : MonoBehaviour {
 
         public void Update () {
             if (mapDataReceived) {
-                float viewerDstFromEdge = Mathf.Sqrt (bounds.SqrDistance (viewerPos));
+                float viewerDstFromEdge = Mathf.Sqrt (bounds.SqrDistance (_viewerPos));
                 bool visible = viewerDstFromEdge <= maxViewDst;
 
                 if (visible) {

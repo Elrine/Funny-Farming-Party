@@ -5,7 +5,7 @@ using UnityEngine;
 public static class MeshGenerator {
     public static MeshData generateTerrainMesh (float[, ] heightMap, float heightMultiplier, AnimationCurve _heightCurve, int levelOfDetails) {
         AnimationCurve heightCurve = new AnimationCurve (_heightCurve.keys);
-        
+
         int simpleIncrement = (levelOfDetails == 0) ? 1 : (levelOfDetails * 2);
 
         int borderSize = heightMap.GetLength (0);
@@ -54,8 +54,20 @@ public static class MeshGenerator {
                 }
             }
         }
-        mesh.bakeNormals();
+        mesh.bakeNormals ();
         return mesh;
+    }
+
+    public static Vector3 evaluateVertex (float[, ] heightMap, float heightMultiplier, AnimationCurve heightCurve, Vector2Int pos) {
+        
+        int borderSize = heightMap.GetLength (0);
+        int meshSize = borderSize - 2;
+        float topLeftX = (meshSize - 1) / -2f;
+        float topLeftZ = (meshSize - 1) / 2f;
+        Vector2 percent = new Vector2 ((pos.x - 1) / (float) meshSize, (pos.y - 1) / (float) meshSize);
+        float height = heightCurve.Evaluate (heightMap[pos.x, pos.y]) * heightMultiplier;
+        Vector3 vertexPos = new Vector3 (topLeftX + percent.x * meshSize, height, topLeftZ - meshSize * percent.y);
+        return vertexPos;
     }
 }
 
@@ -155,8 +167,8 @@ public class MeshData {
         return Vector3.Cross (vectorAB, vectorAC).normalized;
     }
 
-    public void bakeNormals() {
-        bakedNormals = CalculateNormals();
+    public void bakeNormals () {
+        bakedNormals = CalculateNormals ();
     }
 
     public Mesh createMesh () {

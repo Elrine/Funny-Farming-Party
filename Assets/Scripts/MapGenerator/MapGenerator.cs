@@ -7,11 +7,12 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour {
     public enum DrawMode {
         NoiseMap,
+        NoiseMesh,
         Mesh
     }
     public DrawMode drawMode;
 
-    public NoiseData noiseSettings;
+    public NoiseData heightMapSettings;
     public TerrainData terrainSettings;
     public TextureData textureSettings;
 
@@ -37,6 +38,9 @@ public class MapGenerator : MonoBehaviour {
             case DrawMode.Mesh:
                 display.drawMesh (MeshGenerator.generateTerrainMesh (map.heightMap, terrainSettings.meshHeightMultiplier, terrainSettings.meshHeightCurve, editorPreviewLOD));
                 break;
+            case DrawMode.NoiseMesh:
+                display.drawTextureMesh (MeshGenerator.generateTerrainMesh (map.heightMap, terrainSettings.meshHeightMultiplier, terrainSettings.meshHeightCurve, editorPreviewLOD), TextureGenerator.generateNoiseTexture(map.heightMap));
+                break;
             default:
                 break;
         }
@@ -52,7 +56,7 @@ public class MapGenerator : MonoBehaviour {
     }
 
     public MapData generateMapData (Vector2 center, bool inThread) {
-        float[, ] noiseMap = Noise.generateNoiseMap (mapChunkSize + 2, mapChunkSize + 2, noiseSettings.seed, noiseSettings.noiseScale, noiseSettings.octaves, noiseSettings.persitance, noiseSettings.lacunarity, noiseSettings.offset + center, noiseSettings.normalizeMode);
+        float[, ] noiseMap = Noise.generateNoiseMap (mapChunkSize + 2, mapChunkSize + 2, heightMapSettings.seed, heightMapSettings.noiseScale, heightMapSettings.octaves, heightMapSettings.persitance, heightMapSettings.lacunarity, heightMapSettings.offset + center, heightMapSettings.normalizeMode);
 
         for (int y = 0; y < mapChunkSize; y++) {
             for (int x = 0; x < mapChunkSize; x++) {
@@ -98,9 +102,9 @@ public class MapGenerator : MonoBehaviour {
             terrainSettings.onValuesUpdated -= OnValuesUpdated;
             terrainSettings.onValuesUpdated += OnValuesUpdated;
         }
-        if (noiseSettings != null) {
-            noiseSettings.onValuesUpdated -= OnValuesUpdated;
-            noiseSettings.onValuesUpdated += OnValuesUpdated;
+        if (heightMapSettings != null) {
+            heightMapSettings.onValuesUpdated -= OnValuesUpdated;
+            heightMapSettings.onValuesUpdated += OnValuesUpdated;
         }
         if (textureSettings != null) {
             textureSettings.onValuesUpdated -= OnTextureValuesUpdated;
@@ -126,7 +130,7 @@ public class MapGenerator : MonoBehaviour {
     private int mapNumber = 0;
 
     public void saveNoise () {
-        float[, ] noiseMap = Noise.generateNoiseMap (mapChunkSize, mapChunkSize, noiseSettings.seed, noiseSettings.noiseScale, noiseSettings.octaves, noiseSettings.persitance, noiseSettings.lacunarity, noiseSettings.offset, Noise.NormalizeMode.Local);
+        float[, ] noiseMap = Noise.generateNoiseMap (mapChunkSize, mapChunkSize, heightMapSettings.seed, heightMapSettings.noiseScale, heightMapSettings.octaves, heightMapSettings.persitance, heightMapSettings.lacunarity, heightMapSettings.offset, Noise.NormalizeMode.Local);
         byte[] data = TextureGenerator.generateNoiseTexture (noiseMap).EncodeToPNG ();
         System.IO.File.WriteAllBytes ("./Assets/Ressources/noiseMap" + (mapNumber > 0 ? mapNumber.ToString () : "") + ".png", data);
         mapNumber++;

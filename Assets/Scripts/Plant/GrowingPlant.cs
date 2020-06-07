@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GrowingPlant : MonoBehaviour {
-    public MeshRenderer stem;
+    public MeshRenderer[] stems;
     public Color color;
     [Range (0, 1)]
     public float GrowPercent;
@@ -26,7 +26,10 @@ public class GrowingPlant : MonoBehaviour {
         material.SetColor ("_Color", color);
         this.GetComponentsInChildren<MeshRenderer>();
         material.SetFloat ("_GrowPercent", GrowPercent);
-        if (stem != null)
-            stem.sharedMaterial = material;
+        foreach (var stem in stems)
+        {
+            if (stem != null)
+                stem.sharedMaterial = material;
+        }
     }
 }

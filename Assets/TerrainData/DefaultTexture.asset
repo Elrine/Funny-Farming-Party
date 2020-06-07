@@ -13,15 +13,31 @@ MonoBehaviour:
   m_Name: DefaultTexture
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  baseColors:
-  - {r: 0.18752226, g: 0.75704324, b: 0.8113208, a: 0}
-  - {r: 0.9355552, g: 0.9622642, b: 0.70354223, a: 0}
-  - {r: 0.44095877, g: 0.8490566, b: 0.43654326, a: 0}
-  - {r: 0.25764808, g: 0.5849056, b: 0.16278034, a: 0}
-  - {r: 0.4056604, g: 0.31110606, b: 0.13203098, a: 0}
-  baseStartHeights:
-  - 0
-  - 0.14
-  - 0.17
-  - 0.23
-  - 0.56
+  regions:
+  - name: Water
+    baseColor: {r: 0.4014329, g: 0.8773585, b: 0.86831564, a: 0}
+    baseStartHeight: 0
+    baseBlend: 0
+    plantVaild: []
+  - name: Sand
+    baseColor: {r: 0.8841309, g: 0.8962264, b: 0.62144, a: 0}
+    baseStartHeight: 0.242
+    baseBlend: 0
+    plantVaild: []
+  - name: Grass
+    baseColor: {r: 0.4305358, g: 0.7075472, b: 0.45933026, a: 0}
+    baseStartHeight: 0.291
+    baseBlend: 0
+    plantVaild:
+    - Sphere
+  - name: High Grass
+    baseColor: {r: 0.26147485, g: 0.4716981, b: 0.25587398, a: 0}
+    baseStartHeight: 0.37
+    baseBlend: 0
+    plantVaild:
+    - Sphere
+  - name: Rock
+    baseColor: {r: 0.3962264, g: 0.31812936, b: 0.12522249, a: 0}
+    baseStartHeight: 0.664
+    baseBlend: 0.21
+    plantVaild: []
