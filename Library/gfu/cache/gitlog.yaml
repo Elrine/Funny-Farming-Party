@@ -1,0 +1,1734 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -530159753, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 3
+  lastUpdatedAtString: 2020-06-11T23:30:27.476+02:00
+  initializedAtString: 2020-06-11T23:18:29.998+02:00
+  log:
+  - commitID: 63f61163f99daaa2562e12162c7ec43a2546fda3
+    mergeA: 
+    mergeB: 
+    authorName: "Nathan Harl\xE9"
+    authorEmail: nathan.harle@epitech.eu
+    commitEmail: nathan.harle@epitech.eu
+    commitName: "Nathan Harl\xE9"
+    summary: Grid system done
+    description: Circle day/night WIP
+    timeString: 2020-06-07T23:52:52.000+02:00
+    commitTimeString: 2020-06-07T23:52:52.000+02:00
+    changes:
+    - path: Assets\Materials\Transprance.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\Transprance.mat
+      projectPath: Assets\Materials\Transprance.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\Transprance.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\Transprance.mat.meta
+      projectPath: Assets\Materials\Transprance.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Prefab.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Prefab.meta
+      projectPath: Assets\Prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Prefab\Sphere.prefab
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Prefab\Sphere.prefab
+      projectPath: Assets\Prefab\Sphere.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Prefab\Sphere.prefab.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Prefab\Sphere.prefab.meta
+      projectPath: Assets\Prefab\Sphere.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Prefab\TimeCycle.prefab
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Prefab\TimeCycle.prefab
+      projectPath: Assets\Prefab\TimeCycle.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Prefab\TimeCycle.prefab.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Prefab\TimeCycle.prefab.meta
+      projectPath: Assets\Prefab\TimeCycle.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes.meta
+      projectPath: Assets\SampleScenes.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Materials.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Materials.meta
+      projectPath: Assets\SampleScenes\Materials.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Materials\ParticleClouds.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Materials\ParticleClouds.mat
+      projectPath: Assets\SampleScenes\Materials\ParticleClouds.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Materials\ParticleClouds.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Materials\ParticleClouds.mat.meta
+      projectPath: Assets\SampleScenes\Materials\ParticleClouds.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Materials\SkyboxProcedural.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Materials\SkyboxProcedural.mat
+      projectPath: Assets\SampleScenes\Materials\SkyboxProcedural.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Materials\SkyboxProcedural.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Materials\SkyboxProcedural.mat.meta
+      projectPath: Assets\SampleScenes\Materials\SkyboxProcedural.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Shaders.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Shaders.meta
+      projectPath: Assets\SampleScenes\Shaders.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Shaders\Skybox-Procedural.shader
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Shaders\Skybox-Procedural.shader
+      projectPath: Assets\SampleScenes\Shaders\Skybox-Procedural.shader
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\SampleScenes\Shaders\Skybox-Procedural.shader.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\SampleScenes\Shaders\Skybox-Procedural.shader.meta
+      projectPath: Assets\SampleScenes\Shaders\Skybox-Procedural.shader.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene.meta
+      projectPath: Assets\Scenes\SampleScene.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene.unity
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene.unity
+      projectPath: Assets\Scenes\SampleScene.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene\LightingData.asset
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene\LightingData.asset
+      projectPath: Assets\Scenes\SampleScene\LightingData.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene\LightingData.asset.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene\LightingData.asset.meta
+      projectPath: Assets\Scenes\SampleScene\LightingData.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene\ReflectionProbe-0.exr
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene\ReflectionProbe-0.exr
+      projectPath: Assets\Scenes\SampleScene\ReflectionProbe-0.exr
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene\ReflectionProbe-0.exr.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene\ReflectionProbe-0.exr.meta
+      projectPath: Assets\Scenes\SampleScene\ReflectionProbe-0.exr.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\TextureData.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\TextureData.cs
+      projectPath: Assets\Scripts\Data\TextureData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\InfiniteTerrain.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\InfiniteTerrain.cs
+      projectPath: Assets\Scripts\MapGenerator\InfiniteTerrain.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MapDisplay.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MapDisplay.cs
+      projectPath: Assets\Scripts\MapGenerator\MapDisplay.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MapGenerator.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MapGenerator.cs
+      projectPath: Assets\Scripts\MapGenerator\MapGenerator.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MeshGenerator.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MeshGenerator.cs
+      projectPath: Assets\Scripts\MapGenerator\MeshGenerator.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\Terrain.shader
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\Terrain.shader
+      projectPath: Assets\Scripts\MapGenerator\Terrain.shader
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scripts\Plant\GrowingPlant.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Plant\GrowingPlant.cs
+      projectPath: Assets\Scripts\Plant\GrowingPlant.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Scripts\TimeCycle.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\TimeCycle.meta
+      projectPath: Assets\Scripts\TimeCycle.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\TimeCycle\DayNightCycle.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\TimeCycle\DayNightCycle.cs
+      projectPath: Assets\Scripts\TimeCycle\DayNightCycle.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\TimeCycle\DayNightCycle.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\TimeCycle\DayNightCycle.cs.meta
+      projectPath: Assets\Scripts\TimeCycle\DayNightCycle.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\HUDMap.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\HUDMap.cs
+      projectPath: Assets\Scripts\Utility\HUDMap.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\HUDMap.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\HUDMap.cs.meta
+      projectPath: Assets\Scripts\Utility\HUDMap.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\LookAtHighlight.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\LookAtHighlight.cs
+      projectPath: Assets\Scripts\Utility\LookAtHighlight.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\LookAtHighlight.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\LookAtHighlight.cs.meta
+      projectPath: Assets\Scripts\Utility\LookAtHighlight.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultNoise.asset
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultNoise.asset
+      projectPath: Assets\TerrainData\DefaultNoise.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultTerrain.asset
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultTerrain.asset
+      projectPath: Assets\TerrainData\DefaultTerrain.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultTexture.asset
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultTexture.asset
+      projectPath: Assets\TerrainData\DefaultTexture.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: ProjectSettings\TagManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\TagManager.asset
+      projectPath: ProjectSettings\TagManager.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: ee37ff508b23f990f51b20cfd5b88b0f49c8cd31
+    mergeA: 
+    mergeB: 
+    authorName: "Nathan Harl\xE9"
+    authorEmail: nathan.harle@epitech.eu
+    commitEmail: nathan.harle@epitech.eu
+    commitName: "Nathan Harl\xE9"
+    summary: terrain generator done
+    description: 
+    timeString: 2020-06-05T10:47:10.000+02:00
+    commitTimeString: 2020-06-05T10:47:10.000+02:00
+    changes:
+    - path: .gitignore
+      fullPath: E:\Unity Project\Funny Farming Party\.gitignore
+      projectPath: .gitignore
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Editor.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Editor.meta
+      projectPath: Assets\Editor.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Editor\MapGeneratorEditor.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Editor\MapGeneratorEditor.cs
+      projectPath: Assets\Editor\MapGeneratorEditor.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Editor\MapGeneratorEditor.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Editor\MapGeneratorEditor.cs.meta
+      projectPath: Assets\Editor\MapGeneratorEditor.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Editor\UpdatebleDataEditor.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Editor\UpdatebleDataEditor.cs
+      projectPath: Assets\Editor\UpdatebleDataEditor.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Editor\UpdatebleDataEditor.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Editor\UpdatebleDataEditor.cs.meta
+      projectPath: Assets\Editor\UpdatebleDataEditor.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers.meta
+      projectPath: Assets\Lowpoly Flowers.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials.meta
+      projectPath: Assets\Lowpoly Flowers\Materials.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn1.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn1.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn1.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn1.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn1.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn1.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn12.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn12.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn12.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn12.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn12.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn12.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn13.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn13.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn13.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn13.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn13.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn13.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn14.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn14.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn14.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn14.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn14.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn14.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn15.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn15.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn15.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn15.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn15.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn15.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn16.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn16.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn16.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn16.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn16.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn16.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn18.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn18.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn18.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn18.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn18.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn18.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn19.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn19.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn19.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn19.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn19.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn19.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn2.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn2.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn2.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn2.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn2.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn2.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn20.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn20.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn20.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn20.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn20.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn20.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn21.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn21.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn21.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn21.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn21.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn21.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn22.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn22.mat
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn22.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\Materials\blinn22.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\Materials\blinn22.mat.meta
+      projectPath: Assets\Lowpoly Flowers\Materials\blinn22.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower01.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower01.fbx
+      projectPath: Assets\Lowpoly Flowers\flower01.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower01.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower01.fbx.meta
+      projectPath: Assets\Lowpoly Flowers\flower01.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower02.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower02.fbx
+      projectPath: Assets\Lowpoly Flowers\flower02.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower02.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower02.fbx.meta
+      projectPath: Assets\Lowpoly Flowers\flower02.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower03.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower03.fbx
+      projectPath: Assets\Lowpoly Flowers\flower03.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower03.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower03.fbx.meta
+      projectPath: Assets\Lowpoly Flowers\flower03.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower04.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower04.fbx
+      projectPath: Assets\Lowpoly Flowers\flower04.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower04.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower04.fbx.meta
+      projectPath: Assets\Lowpoly Flowers\flower04.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower05.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower05.fbx
+      projectPath: Assets\Lowpoly Flowers\flower05.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower05.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower05.fbx.meta
+      projectPath: Assets\Lowpoly Flowers\flower05.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower06.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower06.fbx
+      projectPath: Assets\Lowpoly Flowers\flower06.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower06.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower06.fbx.meta
+      projectPath: Assets\Lowpoly Flowers\flower06.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower07.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower07.fbx
+      projectPath: Assets\Lowpoly Flowers\flower07.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Lowpoly Flowers\flower07.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Lowpoly Flowers\flower07.fbx.meta
+      projectPath: Assets\Lowpoly Flowers\flower07.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials.meta
+      projectPath: Assets\Materials.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\MaterialCharacter.physicMaterial
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\MaterialCharacter.physicMaterial
+      projectPath: Assets\Materials\MaterialCharacter.physicMaterial
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\MaterialCharacter.physicMaterial.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\MaterialCharacter.physicMaterial.meta
+      projectPath: Assets\Materials\MaterialCharacter.physicMaterial.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\MeshMaterial.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\MeshMaterial.mat
+      projectPath: Assets\Materials\MeshMaterial.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\MeshMaterial.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\MeshMaterial.mat.meta
+      projectPath: Assets\Materials\MeshMaterial.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\PlantMaterial.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\PlantMaterial.mat
+      projectPath: Assets\Materials\PlantMaterial.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\PlantMaterial.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\PlantMaterial.mat.meta
+      projectPath: Assets\Materials\PlantMaterial.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\mapMaterial.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\mapMaterial.mat
+      projectPath: Assets\Materials\mapMaterial.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Materials\mapMaterial.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Materials\mapMaterial.mat.meta
+      projectPath: Assets\Materials\mapMaterial.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins.meta
+      projectPath: Assets\Plugins.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub.meta
+      projectPath: Assets\Plugins\GitHub.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor.meta
+      projectPath: Assets\Plugins\GitHub\Editor.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\System.Threading.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\credits.txt
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\credits.txt
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\credits.txt.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\eula.txt
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\eula.txt
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\eula.txt.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.so
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\libsfw.so
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\sfw.net.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x64.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x64.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x86.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x86.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Ressources.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Ressources.meta
+      projectPath: Assets\Ressources.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes.meta
+      projectPath: Assets\Scenes.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene.unity
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene.unity
+      projectPath: Assets\Scenes\SampleScene.unity
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scenes\SampleScene.unity.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scenes\SampleScene.unity.meta
+      projectPath: Assets\Scenes\SampleScene.unity.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts.meta
+      projectPath: Assets\Scripts.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data.meta
+      projectPath: Assets\Scripts\Data.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\NoiseData.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\NoiseData.cs
+      projectPath: Assets\Scripts\Data\NoiseData.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\NoiseData.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\NoiseData.cs.meta
+      projectPath: Assets\Scripts\Data\NoiseData.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\TerrainData.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\TerrainData.cs
+      projectPath: Assets\Scripts\Data\TerrainData.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\TerrainData.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\TerrainData.cs.meta
+      projectPath: Assets\Scripts\Data\TerrainData.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\TextureData.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\TextureData.cs
+      projectPath: Assets\Scripts\Data\TextureData.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\TextureData.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\TextureData.cs.meta
+      projectPath: Assets\Scripts\Data\TextureData.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\UpdatebleData.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\UpdatebleData.cs
+      projectPath: Assets\Scripts\Data\UpdatebleData.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Data\UpdatebleData.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Data\UpdatebleData.cs.meta
+      projectPath: Assets\Scripts\Data\UpdatebleData.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator.meta
+      projectPath: Assets\Scripts\MapGenerator.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\InfiniteTerrain.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\InfiniteTerrain.cs
+      projectPath: Assets\Scripts\MapGenerator\InfiniteTerrain.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\InfiniteTerrain.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\InfiniteTerrain.cs.meta
+      projectPath: Assets\Scripts\MapGenerator\InfiniteTerrain.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MapDisplay.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MapDisplay.cs
+      projectPath: Assets\Scripts\MapGenerator\MapDisplay.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MapDisplay.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MapDisplay.cs.meta
+      projectPath: Assets\Scripts\MapGenerator\MapDisplay.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MapGenerator.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MapGenerator.cs
+      projectPath: Assets\Scripts\MapGenerator\MapGenerator.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MapGenerator.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MapGenerator.cs.meta
+      projectPath: Assets\Scripts\MapGenerator\MapGenerator.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MeshGenerator.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MeshGenerator.cs
+      projectPath: Assets\Scripts\MapGenerator\MeshGenerator.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\MeshGenerator.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\MeshGenerator.cs.meta
+      projectPath: Assets\Scripts\MapGenerator\MeshGenerator.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\Terrain.shader
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\Terrain.shader
+      projectPath: Assets\Scripts\MapGenerator\Terrain.shader
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\Terrain.shader.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\Terrain.shader.meta
+      projectPath: Assets\Scripts\MapGenerator\Terrain.shader.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\TextureGenerator.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\TextureGenerator.cs
+      projectPath: Assets\Scripts\MapGenerator\TextureGenerator.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\MapGenerator\TextureGenerator.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\MapGenerator\TextureGenerator.cs.meta
+      projectPath: Assets\Scripts\MapGenerator\TextureGenerator.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Plant.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Plant.meta
+      projectPath: Assets\Scripts\Plant.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Plant\GrowingPlant.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Plant\GrowingPlant.cs
+      projectPath: Assets\Scripts\Plant\GrowingPlant.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Plant\GrowingPlant.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Plant\GrowingPlant.cs.meta
+      projectPath: Assets\Scripts\Plant\GrowingPlant.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Plant\Plant.shader
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Plant\Plant.shader
+      projectPath: Assets\Scripts\Plant\Plant.shader
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Plant\Plant.shader.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Plant\Plant.shader.meta
+      projectPath: Assets\Scripts\Plant\Plant.shader.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility.meta
+      projectPath: Assets\Scripts\Utility.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\HideOnPlay.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\HideOnPlay.cs
+      projectPath: Assets\Scripts\Utility\HideOnPlay.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\HideOnPlay.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\HideOnPlay.cs.meta
+      projectPath: Assets\Scripts\Utility\HideOnPlay.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\Noise.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\Noise.cs
+      projectPath: Assets\Scripts\Utility\Noise.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Scripts\Utility\Noise.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Scripts\Utility\Noise.cs.meta
+      projectPath: Assets\Scripts\Utility\Noise.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets.meta
+      projectPath: Assets\Standard Assets.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters.meta
+      projectPath: Assets\Standard Assets\Characters.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter.meta
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs.meta
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs\RigidBodyFPSController.prefab
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs\RigidBodyFPSController.prefab
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs\RigidBodyFPSController.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs\RigidBodyFPSController.prefab.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs\RigidBodyFPSController.prefab.meta
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Prefabs\RigidBodyFPSController.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts.meta
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs.meta
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs.meta
+      projectPath: Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidCrouch.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidCrouch.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidCrouch.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidCrouch.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidCrouch.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidCrouch.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdle.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdle.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdle.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdle.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdle.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdle.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdleJumpUp.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdleJumpUp.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdleJumpUp.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdleJumpUp.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdleJumpUp.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidIdleJumpUp.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidJumpAndFall.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidJumpAndFall.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidJumpAndFall.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidJumpAndFall.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidJumpAndFall.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidJumpAndFall.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidMidAir.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidMidAir.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidMidAir.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidMidAir.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidMidAir.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidMidAir.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRun.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRun.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRun.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRun.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRun.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRun.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurn.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurn.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurn.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurn.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurn.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurn.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurnSharp.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurnSharp.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurnSharp.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurnSharp.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurnSharp.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidRunTurnSharp.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidStandTurn.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidStandTurn.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidStandTurn.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidStandTurn.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidStandTurn.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidStandTurn.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalk.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalk.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalk.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalk.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalk.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalk.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurn.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurn.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurn.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurn.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurn.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurn.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurnSharp.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurnSharp.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurnSharp.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurnSharp.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurnSharp.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animation\HumanoidWalkTurnSharp.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator\ThirdPersonAnimatorController.controller
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator\ThirdPersonAnimatorController.controller
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator\ThirdPersonAnimatorController.controller
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator\ThirdPersonAnimatorController.controller.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator\ThirdPersonAnimatorController.controller.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Animator\ThirdPersonAnimatorController.controller.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanGrey.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanGrey.mat
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanGrey.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanGrey.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanGrey.mat.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanGrey.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanWhite.mat
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanWhite.mat
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanWhite.mat
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanWhite.mat.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanWhite.mat.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Materials\EthanWhite.mat.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Models.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Models.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Models.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Models\Ethan.fbx
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Models\Ethan.fbx
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Models\Ethan.fbx
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Models\Ethan.fbx.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Models\Ethan.fbx.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Models\Ethan.fbx.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\AIThirdPersonController.prefab
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\AIThirdPersonController.prefab
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\AIThirdPersonController.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\AIThirdPersonController.prefab.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\AIThirdPersonController.prefab.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\AIThirdPersonController.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\ThirdPersonController.prefab
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\ThirdPersonController.prefab
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\ThirdPersonController.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\ThirdPersonController.prefab.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\ThirdPersonController.prefab.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Prefabs\ThirdPersonController.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanNormals.png
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanNormals.png
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanNormals.png
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanNormals.png.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanNormals.png.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanNormals.png.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanOcclusion.png
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanOcclusion.png
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanOcclusion.png
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanOcclusion.png.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanOcclusion.png.meta
+      projectPath: Assets\Standard Assets\Characters\ThirdPersonCharacter\Textures\EthanOcclusion.png.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData.meta
+      projectPath: Assets\TerrainData.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultNoise.asset
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultNoise.asset
+      projectPath: Assets\TerrainData\DefaultNoise.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultNoise.asset.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultNoise.asset.meta
+      projectPath: Assets\TerrainData\DefaultNoise.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultTerrain.asset
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultTerrain.asset
+      projectPath: Assets\TerrainData\DefaultTerrain.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultTerrain.asset.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultTerrain.asset.meta
+      projectPath: Assets\TerrainData\DefaultTerrain.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultTexture.asset
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultTexture.asset
+      projectPath: Assets\TerrainData\DefaultTexture.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\TerrainData\DefaultTexture.asset.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\TerrainData\DefaultTexture.asset.meta
+      projectPath: Assets\TerrainData\DefaultTexture.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\flower01.prefab
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\flower01.prefab
+      projectPath: Assets\flower01.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\flower01.prefab.meta
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\flower01.prefab.meta
+      projectPath: Assets\flower01.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Packages\manifest.json
+      fullPath: E:\Unity Project\Funny Farming Party\Packages\manifest.json
+      projectPath: Packages\manifest.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\AudioManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\AudioManager.asset
+      projectPath: ProjectSettings\AudioManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\ClusterInputManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\ClusterInputManager.asset
+      projectPath: ProjectSettings\ClusterInputManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\DynamicsManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\DynamicsManager.asset
+      projectPath: ProjectSettings\DynamicsManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\EditorBuildSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ProjectSettings\EditorBuildSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\EditorSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\EditorSettings.asset
+      projectPath: ProjectSettings\EditorSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\GraphicsSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\GraphicsSettings.asset
+      projectPath: ProjectSettings\GraphicsSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\InputManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\InputManager.asset
+      projectPath: ProjectSettings\InputManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\NavMeshAreas.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\NavMeshAreas.asset
+      projectPath: ProjectSettings\NavMeshAreas.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\Physics2DSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\Physics2DSettings.asset
+      projectPath: ProjectSettings\Physics2DSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\PresetManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\PresetManager.asset
+      projectPath: ProjectSettings\PresetManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\ProjectSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\ProjectSettings.asset
+      projectPath: ProjectSettings\ProjectSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\ProjectVersion.txt
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\ProjectVersion.txt
+      projectPath: ProjectSettings\ProjectVersion.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\QualitySettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\QualitySettings.asset
+      projectPath: ProjectSettings\QualitySettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\TagManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\TagManager.asset
+      projectPath: ProjectSettings\TagManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\TimeManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\TimeManager.asset
+      projectPath: ProjectSettings\TimeManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\URPProjectSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\URPProjectSettings.asset
+      projectPath: ProjectSettings\URPProjectSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\UnityConnectSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\UnityConnectSettings.asset
+      projectPath: ProjectSettings\UnityConnectSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\VFXManager.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\VFXManager.asset
+      projectPath: ProjectSettings\VFXManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\XRSettings.asset
+      fullPath: E:\Unity Project\Funny Farming Party\ProjectSettings\XRSettings.asset
+      projectPath: ProjectSettings\XRSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: fbb62445d971f98a8de020c3460285025cccf1a9
+    mergeA: 
+    mergeB: 
+    authorName: "Nathan Harl\xE9"
+    authorEmail: nathan.harle@epitech.eu
+    commitEmail: nathan.harle@epitech.eu
+    commitName: "Nathan Harl\xE9"
+    summary: Initial commit
+    description: 
+    timeString: 2020-06-01T09:01:34.000+02:00
+    commitTimeString: 2020-06-01T09:01:34.000+02:00
+    changes:
+    - path: .gitattributes
+      fullPath: E:\Unity Project\Funny Farming Party\.gitattributes
+      projectPath: .gitattributes
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: .gitignore
+      fullPath: E:\Unity Project\Funny Farming Party\.gitignore
+      projectPath: .gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\.gitignore
+      fullPath: E:\Unity Project\Funny Farming Party\Assets\.gitignore
+      projectPath: Assets\.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
