@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class RessourceData : UpdatebleData
+public class RessourceData : ScriptableObject
 {
     public string ressourceName;
     [TextArea]
@@ -13,11 +13,17 @@ public class RessourceData : UpdatebleData
 
     [System.Serializable]
     public class Drop {
-        public string name;
+        public ItemData item;
         [Range(0,1)]
         public float dropRate;
         public int minDrop;
         public int maxDrop;
-        public GameObject item;
+        public AnimationCurve numberDrop;
+
+        public class SortByDropRate : IComparer<Drop> {
+            public int Compare(Drop x, Drop y) {
+                return x.dropRate.CompareTo(y.dropRate);
+            }
+        }
     }
 }

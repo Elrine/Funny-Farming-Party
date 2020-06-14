@@ -16,12 +16,17 @@ public class DayNightCycle : MonoBehaviour {
     [SerializeField]
     private Material skyMaterial = null;
     [SerializeField]
-    private Gradient gradientSky = new Gradient();
+    private Gradient gradientSky = new Gradient ();
     [SerializeField]
-    private Gradient gradientGround = new Gradient();
+    private Gradient gradientGround = new Gradient ();
     private float _timeScale;
     [SerializeField]
-    private AnimationCurve lightCurve = new AnimationCurve();
+    private AnimationCurve lightCurve = new AnimationCurve ();
+    private Light _light;
+
+    private void Awake () {
+        setLight ();
+    }
 
     // Update is called once per frame
     void Update () {
@@ -48,18 +53,24 @@ public class DayNightCycle : MonoBehaviour {
 
     void updateMaterial () {
         if (skyMaterial != null) {
-            skyMaterial.SetColor ("_SkyTint",  gradientSky.Evaluate (currentTime));
+            skyMaterial.SetColor ("_SkyTint", gradientSky.Evaluate (currentTime));
             skyMaterial.SetFloat ("_SunStrength", lightCurve.Evaluate (currentTime));
+            _light.intensity = lightCurve.Evaluate (currentTime);
         }
     }
 
-    public float getDeltaTime() {
+    public float getDeltaTime () {
         return Time.deltaTime * _timeScale / 86400;
     }
 
     private void OnValidate () {
+        setLight ();
         UpdateTimeScale ();
         UpdateLight ();
         updateMaterial ();
+    }
+
+    private void setLight () {
+        _light = GetComponentInChildren<Light> ();
     }
 }

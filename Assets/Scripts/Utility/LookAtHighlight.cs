@@ -7,12 +7,25 @@ public class LookAtHighlight : MonoBehaviour {
     static MapGenerator mapGenerator;
     GameObject oldGameObject;
     public float distanceToHit;
+    public Material transparantMaterial;
+    public bool isActivate = true;
 
     private void Awake () {
         mapGenerator = FindObjectOfType<MapGenerator> ();
+        if (prefab == null) {
+            prefab = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+            MeshRenderer meshRenderer = prefab.AddComponent<MeshRenderer> ();
+            meshRenderer.material = transparantMaterial;
+        }
     }
     // Update is called once per frame
     void Update () {
+        if (isActivate) {
+            UpdateRaycast();
+        }
+    }
+
+    void UpdateRaycast() {
         Transform cam = Camera.main.transform;
         Ray ray = new Ray (cam.position, cam.forward);
         RaycastHit hit;
@@ -40,9 +53,10 @@ public class LookAtHighlight : MonoBehaviour {
             Debug.DrawLine (listPoint[2], listPoint[0]);
             Vector3 pos = nearestPoint (listPoint, hit.point);
             TextureData.Region currentRegion = findCurrentRegion (mapGenerator.textureSettings, pos);
-            if (pos != Vector3.zero && currentRegion.plantVaild.Contains (prefab.name)) {
+            if (pos != Vector3.zero) {
                 if (oldGameObject == null) {
                     oldGameObject = Object.Instantiate (prefab, pos, Quaternion.identity);
+                    SetMaterials (oldGameObject);
                 } else {
                     oldGameObject.transform.position = pos;
                 }
@@ -53,6 +67,26 @@ public class LookAtHighlight : MonoBehaviour {
         } else if (oldGameObject != null) {
             Object.Destroy (oldGameObject);
             oldGameObject = null;
+        }
+    }
+
+    void SetMaterials (GameObject _gameObject) {
+        MeshRenderer meshRenderer = _gameObject.GetComponent<MeshRenderer> ();
+        if (meshRenderer == null) {
+            MeshRenderer[] meshRenderers = _gameObject.GetComponentsInChildren<MeshRenderer> ();
+            foreach (var renderer in meshRenderers) {
+                Material[] materials = new Material[renderer.materials.GetLength (0)];
+                for (int i = 0; i < materials.GetLength (0); i++) {
+                    materials[i] = transparantMaterial;
+                }
+                renderer.materials = materials;
+            }
+        } else {
+            Material[] materials = new Material[meshRenderer.materials.GetLength (0)];
+            for (int i = 0; i < materials.GetLength (0); i++) {
+                materials[i] = transparantMaterial;
+            }
+            meshRenderer.materials = materials;
         }
     }
 

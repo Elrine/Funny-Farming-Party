@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class PlantData : RessourceData
 {
-    public float timeToGrow;
+    public float daysToGrow;
 }

@@ -12,9 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5f6c3135cd5f3419b1f143a03ed64d, type: 3}
   m_Name: Flower
   m_EditorClassIdentifier: 
-  autoUpdate: 1
   ressourceName: Flower
-  description: a flower
-  dropItem: []
-  prefab: {fileID: 0}
-  timeToGrow: 1
+  description: a simple flower
+  dropItem:
+  - item: {fileID: 11400000, guid: 531ebcc01b6a69648b160f7d344688f1, type: 2}
+    dropRate: 0.9
+    minDrop: 1
+    maxDrop: 2
+    numberDrop:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 3.0378802
+        outSlope: 3.0378802
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.041147113
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  prefab: {fileID: 4850845610132263528, guid: b53abbc4e459699488caf627e2d10494, type: 3}
+  daysToGrow: 1

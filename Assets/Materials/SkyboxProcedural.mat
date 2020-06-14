@@ -74,7 +74,7 @@ Material:
     - _SunDisk: 2
     - _SunSize: 0.1
     - _SunSizeConvergence: 10
-    - _SunStrength: 0.99945736
+    - _SunStrength: 0.9989402
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -85,7 +85,7 @@ Material:
     - _GroundColor: {r: 0.1254902, g: 0.17254902, b: 0.21568628, a: 1}
     - _SkyEquatorColor: {r: 0.188311, g: 0.24798155, b: 0.31617647, a: 1}
     - _SkyMidColor: {r: 0.13327208, g: 0.16961901, b: 0.21323532, a: 1}
-    - _SkyTint: {r: 0.2924643, g: 0.43320364, b: 0.48149842, a: 1}
+    - _SkyTint: {r: 0.491412, g: 0.491412, b: 0.491412, a: 1}
     - _SkyTopColor: {r: 0.08742432, g: 0.11787318, b: 0.1544118, a: 1}
     - _SpecularColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SunTint: {r: 1, g: 0, b: 0, a: 1}
