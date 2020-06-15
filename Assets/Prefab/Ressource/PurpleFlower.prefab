@@ -45,12 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4536386fc7526949bcebdd1ca7caa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantType: {fileID: 11400000, guid: 98d3d67aa5539344eb019a1aca1460d3, type: 2}
+  plantType: {fileID: 11400000, guid: 531ebcc01b6a69648b160f7d344688f1, type: 2}
   currentGrowth: 1
   scale: 1
   clock: {fileID: 0}
   showGrow: 1
-  model: {fileID: 2684739571654363971}
 --- !u!65 &6851248668370443223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79,7 +78,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a41705922ac4aba49a52124f1c4a9bf6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a41705922ac4aba49a52124f1c4a9bf6,
         type: 3}
@@ -146,14 +145,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: purple_flower
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a41705922ac4aba49a52124f1c4a9bf6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a41705922ac4aba49a52124f1c4a9bf6, type: 3}
---- !u!1 &2684739571654363971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a41705922ac4aba49a52124f1c4a9bf6,
-    type: 3}
-  m_PrefabInstance: {fileID: 6225084628809273930}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1376207793781111120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: a41705922ac4aba49a52124f1c4a9bf6,

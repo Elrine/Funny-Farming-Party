@@ -35,9 +35,9 @@ public class HUDPlant : MonoBehaviour
 
     void initFromTarget() {
         if (target != null) {
-            nameText.text = target.PlantType.ressourceName;
-            descriptionText.text = string.Format( "Description: {0}", target.PlantType.description);
-            growValueText.text = string.Format("Day require to grow :\n{0} day(s)", target.PlantType.daysToGrow);
+            nameText.text = target.PlantType.seedOf.ressourceName;
+            descriptionText.text = string.Format( "Description: {0}", target.PlantType.seedOf.description);
+            growValueText.text = string.Format("Day require to grow :\n{0} day(s)", target.PlantType.seedOf.daysToGrow);
         }
     }
 }

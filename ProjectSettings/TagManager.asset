@@ -6,6 +6,8 @@ TagManager:
   tags:
   - stem
   - Chunk
+  - Seed
+  - Plant
   layers:
   - Default
   - TransparentFX
