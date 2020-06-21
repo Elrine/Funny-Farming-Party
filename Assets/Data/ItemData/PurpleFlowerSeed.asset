@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: PurpleFlowerSeed
   itemDescription: 
-  itemInWorld: {fileID: 0}
-  itemInHUD: {fileID: 0}
+  itemInWorld: {fileID: 533036327817739996, guid: 73c02779f98bb084ba808238a5dd172d,
+    type: 3}
+  itemInHUD: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
   goldValue: 1
-  seedOf: {fileID: 0}
+  seedOf: {fileID: 11400000, guid: 98d3d67aa5539344eb019a1aca1460d3, type: 2}

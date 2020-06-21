@@ -29,7 +29,6 @@ public class Plant : MonoBehaviour {
     private bool showGrow = true;
     private Transform modelPlant;
     private Transform modelSeed;
-    [SerializeField]
     private bool createModel = false;
     // Start is called before the first frame update
     void Start () {
@@ -57,8 +56,10 @@ public class Plant : MonoBehaviour {
     }
 
     void ScaleToGrow () {
-        modelPlant.localScale = Vector3.one * currentGrowth * scale;
-        modelSeed.localScale = Vector3.one - (Vector3.one * currentGrowth * scale);
+        if (modelPlant != null)
+            modelPlant.localScale = Vector3.one * currentGrowth * scale;
+        if (modelSeed != null)
+            modelSeed.localScale = Vector3.one - (Vector3.one * currentGrowth * scale);
     }
 
     private void OnValidate () {
@@ -72,7 +73,7 @@ public class Plant : MonoBehaviour {
     }
 
     void SetModel () {
-        if (createModel) {
+        if (modelPlant == null || modelSeed == null) {
             Transform[] transforms = gameObject.GetComponentsInChildren<Transform> ();
             foreach (var _transform in transforms) {
                 if (_transform.gameObject.tag == "Plant") {
@@ -82,41 +83,47 @@ public class Plant : MonoBehaviour {
                     modelSeed = _transform;
                 }
             }
-            if (modelPlant == null) {
-                GameObject plant;
-                if (plantType.seedOf.prefab != null) {
-                    plant = GameObject.Instantiate (plantType.seedOf.prefab, transform.position, Quaternion.identity, transform);
-                } else {
-                    plant = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-                    plant.transform.parent = transform;
-                    plant.transform.localPosition = Vector3.zero;
+            if (createModel) {
+                if (modelPlant == null) {
+                    GameObject plant;
+                    if (plantType.seedOf.prefab != null) {
+                        plant = GameObject.Instantiate (plantType.seedOf.prefab, transform.position, Quaternion.identity, transform);
+                    } else {
+                        plant = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+                        plant.transform.parent = transform;
+                        plant.transform.localPosition = Vector3.zero;
+                    }
+                    modelPlant = plant.transform;
+                    plant.tag = "Plant";
                 }
-                modelPlant = plant.transform;
-                plant.tag = "Plant";
-            }
-            if (modelSeed == null) {
-                GameObject seed;
-                if (plantType.itemInWorld != null) {
-                    seed = GameObject.Instantiate (plantType.itemInWorld, transform.position, Quaternion.identity, transform);
-                } else {
-                    seed = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-                    seed.transform.parent = transform;
-                    seed.transform.localPosition = Vector3.zero;
+                if (modelSeed == null) {
+                    GameObject seed;
+                    if (plantType.itemInWorld != null) {
+                        seed = GameObject.Instantiate (plantType.itemInWorld, transform.position, Quaternion.identity, transform);
+                    } else {
+                        seed = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+                        seed.transform.parent = transform;
+                        seed.transform.localPosition = Vector3.zero;
+                    }
+                    modelSeed = seed.transform;
+                    seed.tag = "Seed";
                 }
-                modelSeed = seed.transform;
-                seed.tag = "Seed";
             }
         }
     }
 
-    private void OnDestroy () {
+    void harvest() {
         RessourceData.Drop[] dropList = plantType.seedOf.dropItem;
         Array.Sort (dropList, new RessourceData.Drop.SortByDropRate ());
         System.Random pgrn = new System.Random ((int) DateTime.Now.Ticks);
         float percent = pgrn.Next (0, 10000) / 10000f;
         foreach (var drop in dropList) {
-            if (percent <= drop.dropRate) {
-                int numberOfDrop = Mathf.RoundToInt (drop.numberDrop.Evaluate (percent * drop.dropRate) * (drop.maxDrop - drop.minDrop)) + drop.minDrop;
+            if (percent <= drop.dropRate && (!drop.dropWhenMaturate || currentGrowth >= 1)) {
+                int numberOfDrop;
+                if (currentGrowth < 1)
+                    numberOfDrop = Mathf.RoundToInt (drop.numberDrop.Evaluate (percent * drop.dropRate) * (drop.maxDrop - drop.minDrop)) + drop.minDrop;
+                else
+                    numberOfDrop = drop.minDrop;
                 for (int i = 0; i < numberOfDrop; i++) {
                     GameObject.Instantiate (drop.item.itemInWorld, transform.position, Quaternion.identity);
                 }

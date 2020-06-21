@@ -8,7 +8,7 @@ public class LookAtInfo : MonoBehaviour {
     private Plant targetPlant;
     private RaycastHit hit;
     [SerializeField]
-    private HUDPlant hud;
+    private HUDPlant hud = null;
     [SerializeField]
     private float distanceToInfo = 30f;
     [SerializeField]
