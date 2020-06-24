@@ -49,7 +49,7 @@ public class LookAtInfo : MonoBehaviour {
             RectTransform hudTransform = hud.GetComponent<RectTransform>();
             hudTransform.position = posOnScreen + offsetHud;
         }
-        else if (hud.target != null) {
+        else if (hud.target != null || hud.gameObject.activeSelf) {
             hud.target = null;
             hud.gameObject.SetActive(false);
         }

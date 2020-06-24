@@ -16,9 +16,9 @@ MonoBehaviour:
   description: a simple flower
   dropItem:
   - item: {fileID: 11400000, guid: 531ebcc01b6a69648b160f7d344688f1, type: 2}
-    dropRate: 0.9
+    dropRate: 1
     minDrop: 1
-    maxDrop: 2
+    maxDrop: 3
     numberDrop:
       serializedVersion: 2
       m_Curve:
@@ -43,5 +43,54 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    dropWhenMaturate: 0
+  - item: {fileID: 11400000, guid: d306cb4503f77754cbfcce079d686746, type: 2}
+    dropRate: 1
+    minDrop: 2
+    maxDrop: 3
+    numberDrop:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.14908034
+        outSlope: 0.14908034
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.9998429
+      - serializedVersion: 3
+        time: 0.49995926
+        value: 0.33645928
+        inSlope: 0.53226376
+        outSlope: 0.53226376
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.09059255
+      - serializedVersion: 3
+        time: 0.8990537
+        value: 0.66871405
+        inSlope: 2.1275704
+        outSlope: 2.1275704
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 4.2657924
+        outSlope: 4.2657924
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.049838264
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    dropWhenMaturate: 1
   prefab: {fileID: 4850845610132263528, guid: b53abbc4e459699488caf627e2d10494, type: 3}
+  sizeRessource: 1
   daysToGrow: 1

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f183dd06538f3fb4094f34a46762d64b, type: 3}
   m_Name: PurpleFlowerSeed
   m_EditorClassIdentifier: 
-  itemName: PurpleFlowerSeed
+  itemName: Purple Flower Seed
   itemDescription: 
-  itemInWorld: {fileID: 533036327817739996, guid: 73c02779f98bb084ba808238a5dd172d,
+  itemInWorld: {fileID: 5327823875044980970, guid: 897369504a9c8b04ea9536b18f09fde8,
     type: 3}
   itemInHUD: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
   goldValue: 1

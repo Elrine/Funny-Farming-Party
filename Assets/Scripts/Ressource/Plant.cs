@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour {
+public class Plant : RessourceAbstact {
     [SerializeField]
     private SeedData plantType = null;
     public SeedData PlantType {
@@ -37,6 +37,10 @@ public class Plant : MonoBehaviour {
             clock = FindObjectOfType<DayNightCycle> ();
         }
         SetModel ();
+        isMature = false;
+        if (ressourceType == null) {
+            ressourceType = plantType.seedOf;
+        }
     }
 
     // Update is called once per frame
@@ -51,7 +55,10 @@ public class Plant : MonoBehaviour {
             currentGrowth += deltaTime / plantType.seedOf.daysToGrow;
             if (currentGrowth > 1) {
                 currentGrowth = 1;
+                isMature = true;
             }
+        } else if (!isMature) {
+            isMature = true;
         }
     }
 
@@ -86,8 +93,8 @@ public class Plant : MonoBehaviour {
             if (createModel) {
                 if (modelPlant == null) {
                     GameObject plant;
-                    if (plantType.seedOf.prefab != null) {
-                        plant = GameObject.Instantiate (plantType.seedOf.prefab, transform.position, Quaternion.identity, transform);
+                    if (ressourceType.prefab != null) {
+                        plant = GameObject.Instantiate (ressourceType.prefab, transform.position, Quaternion.identity, transform);
                     } else {
                         plant = GameObject.CreatePrimitive (PrimitiveType.Sphere);
                         plant.transform.parent = transform;
@@ -112,22 +119,8 @@ public class Plant : MonoBehaviour {
         }
     }
 
-    void harvest() {
-        RessourceData.Drop[] dropList = plantType.seedOf.dropItem;
-        Array.Sort (dropList, new RessourceData.Drop.SortByDropRate ());
-        System.Random pgrn = new System.Random ((int) DateTime.Now.Ticks);
-        float percent = pgrn.Next (0, 10000) / 10000f;
-        foreach (var drop in dropList) {
-            if (percent <= drop.dropRate && (!drop.dropWhenMaturate || currentGrowth >= 1)) {
-                int numberOfDrop;
-                if (currentGrowth < 1)
-                    numberOfDrop = Mathf.RoundToInt (drop.numberDrop.Evaluate (percent * drop.dropRate) * (drop.maxDrop - drop.minDrop)) + drop.minDrop;
-                else
-                    numberOfDrop = drop.minDrop;
-                for (int i = 0; i < numberOfDrop; i++) {
-                    GameObject.Instantiate (drop.item.itemInWorld, transform.position, Quaternion.identity);
-                }
-            }
-        }
+    protected override void OnHarvesting()
+    {
+        GameObject.Destroy(gameObject);
     }
 }

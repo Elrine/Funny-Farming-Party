@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6851248668370443223}
   m_Layer: 0
   m_Name: PurpleFlower
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4536386fc7526949bcebdd1ca7caa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ressourceType: {fileID: 0}
   plantType: {fileID: 11400000, guid: 531ebcc01b6a69648b160f7d344688f1, type: 2}
   currentGrowth: 0
   scale: 1

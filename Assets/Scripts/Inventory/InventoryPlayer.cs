@@ -1,30 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class InventoryPlayer : MonoBehaviour {
+    private static InventoryPlayer _instance;
+    public static InventoryPlayer Instance {
+        get {
+            return _instance;
+        }
+    }
     public uint sizeInventory = 15;
     public const uint sizeInventoryBar = 5;
     public Dictionary<Vector2, System.Action<ItemStack>> callbackList = new Dictionary<Vector2, System.Action<ItemStack>> ();
     public SelectorCursorUI cursor = null;
-    public uint gold = 0;
+    [SerializeField]
+    private Text goldText = null;
+    private uint _gold = 0;
+    public uint Gold {
+        get {
+            return _gold;
+        }
+        set {
+            _gold = value;
+            if (goldText != null)
+                goldText.text = "Gold:" + _gold.ToString ();
+        }
+    }
+
     [SerializeField]
     const uint sizeRowInventory = 5;
-    private Dictionary<Vector2, ItemStack> inventoryData = null;
+    private Dictionary<Vector2, ItemStack> inventoryData = new Dictionary<Vector2, ItemStack>();
 
     [SerializeField]
     private InventorySlot[] initInventoryData = null;
     private bool showInventory = false;
+    public bool inventoryShown {
+        get {
+            return showInventory;
+        }
+    }
     private RigidbodyFirstPersonController player = null;
     [SerializeField]
     public GameObject background = null;
+    [SerializeField]
+    private List<GameObject> uiToHide = null;
+
+    public enum SlotType {
+        Plant,
+        Tools,
+        Other,
+        Empty
+    }
 
     public void subscribeUpdate (Vector2 pos, System.Action<ItemStack> callback) {
         if (callbackList.ContainsKey (pos))
             callbackList[pos] += callback;
         else
             callbackList.Add (pos, callback);
+
+        if (showInventory || pos.y == 0) {
+            if (inventoryData.ContainsKey (pos))
+                callback (inventoryData[pos]);
+            else
+                callback (null);
+        }
     }
 
     public void unsubscribeUpdate (Vector2 pos, System.Action<ItemStack> callback) {
@@ -83,7 +124,6 @@ public class InventoryPlayer : MonoBehaviour {
 
     void NotifyUpdate (Vector2 pos) {
         if (showInventory || pos.y == 0) {
-            Debug.Log ("Notify Update at " + pos.ToString ());
             if (callbackList.ContainsKey (pos)) {
                 if (inventoryData.ContainsKey (pos))
                     callbackList[pos] (inventoryData[pos]);
@@ -117,13 +157,27 @@ public class InventoryPlayer : MonoBehaviour {
 
     private void Awake () {
         player = FindObjectOfType<RigidbodyFirstPersonController> ();
+        if (_instance == null) {
+            _instance = this;
+        } else {
+            Destroy (this);
+        }
     }
 
     public void setUIVisible (bool visible) {
         showInventory = visible;
-        background.SetActive (showInventory);
+        SlotUI slot;
+        foreach (var ui in uiToHide) {
+            slot = ui.GetComponent<SlotUI> ();
+            if (slot) {
+                slot.showSlot (showInventory);
+            } else {
+                ui.SetActive (showInventory);
+            }
+        }
         if (showInventory) {
             NotifyAll ();
+            goldText.text = "Gold:" + _gold.ToString ();
         }
         player.enabled = !showInventory;
         player.mouseLook.SetCursorLock (!showInventory);
@@ -156,6 +210,20 @@ public class InventoryPlayer : MonoBehaviour {
                 inventoryData[pos].sizeStack -= number;
                 NotifyUpdate (pos);
             }
+        }
+    }
+
+    public SlotType getCurrentSlotType () {
+        ItemData item = getCurrentSlot ();
+        if (item == null)
+            return SlotType.Empty;
+        switch (item.GetItemType) {
+            case ItemData.ItemType.SeedType:
+                return SlotType.Plant;
+            case ItemData.ItemType.ToolType:
+                return SlotType.Tools;
+            default:
+                return SlotType.Other;
         }
     }
 

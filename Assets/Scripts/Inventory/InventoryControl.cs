@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InventoryControl : MonoBehaviour {
     private Camera cam;
-    private InventoryPlayer inventory;
     private RaycastHit hit;
     [SerializeField]
     private float distanceToPlace = 10f;
@@ -15,7 +14,6 @@ public class InventoryControl : MonoBehaviour {
 
     private void Awake () {
         cam = Camera.main;
-        inventory = FindObjectOfType<InventoryPlayer> ();
     }
 
     void Start () {
@@ -24,13 +22,15 @@ public class InventoryControl : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        UpdateColision ();
-        PlaceRessource ();
+        if (!InventoryPlayer.Instance.inventoryShown) {
+            UpdateColision ();
+            PlaceRessource ();
+        }
     }
 
     public void PlaceRessource () {
-        if (inventory.getCurrentSlot () && inventory.getCurrentSlot ().GetItemType == ItemData.ItemType.SeedType) {
-            SeedData seed = inventory.getCurrentSlot () as SeedData;
+        if (InventoryPlayer.Instance.getCurrentSlot () && InventoryPlayer.Instance.getCurrentSlot ().GetItemType == ItemData.ItemType.SeedType) {
+            SeedData seed = InventoryPlayer.Instance.getCurrentSlot () as SeedData;
             Vector2 targetPosOnGrid = new Vector2 (targetPos.x, targetPos.z);
             if (targetPos != Vector3.zero && RessouceGenerator.Instance.placeValid (targetPosOnGrid, seed.seedOf)) {
                 if (oldIndicator == null) {
@@ -45,7 +45,7 @@ public class InventoryControl : MonoBehaviour {
                 }
                 if (Input.GetKeyDown (KeyCode.Mouse0)) {
                     RessouceGenerator.Instance.placeRessource (targetPos, seed.seedOf);
-                    inventory.RemoveCurrentItem ();
+                    InventoryPlayer.Instance.RemoveCurrentItem ();
                     GameObject.Destroy (oldIndicator);
                     oldIndicator = null;
                 }
@@ -62,25 +62,36 @@ public class InventoryControl : MonoBehaviour {
     public void UpdateColision () {
         Ray ray = new Ray (cam.transform.position, cam.transform.forward);
         Debug.DrawRay (ray.origin, ray.direction * distanceToPlace, Color.red);
-        RaycastHit[] allHit = Physics.RaycastAll(ray, distanceToPlace);
-        bool isHit = false;
-        foreach (var _hit in allHit)
-        {
-            if (_hit.collider.gameObject.CompareTag("Chunk")) {
-                isHit = true;
+        RaycastHit[] allHit = Physics.RaycastAll (ray, distanceToPlace);
+        bool hitChunk = false;
+        bool hitRessource = false;
+        InventoryPlayer.SlotType slotType = InventoryPlayer.Instance.getCurrentSlotType ();
+        foreach (var _hit in allHit) {
+            if (slotType == InventoryPlayer.SlotType.Plant && _hit.collider.gameObject.CompareTag ("Chunk")) {
+                hitChunk = true;
+                hit = _hit;
+            }
+            if (Input.GetMouseButtonDown (0) && slotType != InventoryPlayer.SlotType.Plant && _hit.collider.gameObject.CompareTag ("Plant")) {
+                hitRessource = true;
                 hit = _hit;
             }
         }
-        if (isHit) {
+        if (hitChunk) {
             MeshCollider chunckCollider = hit.collider as MeshCollider;
             if (chunckCollider) {
                 targetPos = FindPointInChunck (chunckCollider);
-                Debug.DrawRay(targetPos, Vector3.up * 3, Color.green);
-            }
-            else
+                Debug.DrawRay (targetPos, Vector3.up * 3, Color.green);
+            } else
                 targetPos = Vector3.zero;
         } else {
             targetPos = Vector3.zero;
+            if (hitRessource) {
+                BoxCollider ressourceCollider = hit.collider as BoxCollider;
+                if (ressourceCollider) {
+                    RessourceAbstact plant = ressourceCollider.GetComponent<RessourceAbstact> ();
+                    plant.Harvest ();
+                }
+            }
         }
     }
 

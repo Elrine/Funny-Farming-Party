@@ -24,7 +24,6 @@ public class RessouceGenerator : MonoBehaviour {
     public bool placeValid (Vector2 pos, RessourceData toPlace) {
         Vector2 posInGrid = pos;
         if (listRessource.ContainsKey (posInGrid)) {
-            Debug.Log("Pos:" + pos.ToString() + "\tListRessource:" + listRessource[posInGrid] + "\tposInGrid:" + posInGrid.ToString());
             return false;
         }
         return true;
