@@ -81,7 +81,6 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     }
 
     public void removeItem() {
-        Debug.LogFormat("Destroy {0}", fromSlot.position);
         fromSlot.removeCurrentItem();
         Destroy(gameObject);
     }

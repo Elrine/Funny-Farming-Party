@@ -60,24 +60,6 @@ public class InventoryPlayer : IInventory {
     [SerializeField]
     private Vector2 offsetBackground = new Vector2 (0, 350);
     private InventoryData.InventorySlot lastSlot;
-    private static bool _isFixData = false;
-    public bool isFixData {
-        get {
-            return _isFixData;
-        }
-        set {
-            _isFixData = value;
-            if (_isFixData) {
-                Vector2 cursor;
-                for (int y = 0; y < sizeInventory / sizeInventoryBar; y++) {
-                    for (int x = 0; x < sizeRowInventory && x + y * sizeInventoryBar < sizeInventory; x++) {
-                        cursor = new Vector2 (x, y);
-                        NotifyUpdate (new InventoryData.InventorySlot (cursor, null));
-                    }
-                }
-            }
-        }
-    }
 
     public override void subscribeUpdate (Vector2 pos, System.Action<ItemStack> callback) {
         if (callbackList.ContainsKey (pos))
@@ -134,8 +116,6 @@ public class InventoryPlayer : IInventory {
     }
 
     public override void RemoveSlot (Vector2 pos) {
-        if (!isFixData) {
-            Debug.LogFormat ("Remove Slot {0}", pos);
             foreach (var slot in inventoryData.inventoryContent) {
                 if (slot.pos == pos) {
                     inventoryData.inventoryContent.Remove (slot);
@@ -143,7 +123,6 @@ public class InventoryPlayer : IInventory {
                 }
             }
             NotifyUpdate (new InventoryData.InventorySlot (pos, null));
-        }
     }
 
     public override bool SetItemAt (Vector2 pos, ItemStack stack) {
