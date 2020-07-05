@@ -14,6 +14,22 @@ public class HUDPlant : MonoBehaviour
     private Text descriptionText = null;
     [SerializeField]
     private Text growValueText = null;
+    private static HUDPlant _instance = null;
+    public static HUDPlant Instance {
+        get {
+            return _instance;
+        }
+    }
+
+    private void Awake() {
+        if (_instance == null) {
+            _instance = this;
+            DontDestroyOnLoad(transform.parent.gameObject);
+        }
+        else {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +41,7 @@ public class HUDPlant : MonoBehaviour
     void Update()
     {
         if (target != null) {
+            initFromTarget();
             progressBar.UpdateBar(target.CurrentGrowth, 1);
         }
     }

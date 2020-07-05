@@ -8,8 +8,6 @@ public class LookAtInfo : MonoBehaviour {
     private Plant targetPlant;
     private RaycastHit hit;
     [SerializeField]
-    private HUDPlant hud = null;
-    [SerializeField]
     private float distanceToInfo = 30f;
     [SerializeField]
     private Vector2 offsetHud = new Vector2();
@@ -17,7 +15,7 @@ public class LookAtInfo : MonoBehaviour {
     // Start is called before the first frame update
     void Start () {
         cam = Camera.main;
-        hud.gameObject.SetActive (false);
+        HUDPlant.Instance.gameObject.SetActive (false);
     }
 
     // Update is called once per frame
@@ -39,19 +37,19 @@ public class LookAtInfo : MonoBehaviour {
 
     void UpdateHudPlant () {
         if (targetPlant != null) {
-            if (hud.target == null) {
-                hud.gameObject.SetActive (true);
-                hud.target = targetPlant;
+            if (HUDPlant.Instance.target == null) {
+                HUDPlant.Instance.gameObject.SetActive (true);
+                HUDPlant.Instance.target = targetPlant;
             }
             Vector3 targetPos = targetPlant.transform.position;
             Vector3 pos = new Vector3(targetPos.x, hit.point.y, targetPos.z);
             Vector2 posOnScreen = cam.WorldToScreenPoint(pos);
-            RectTransform hudTransform = hud.GetComponent<RectTransform>();
+            RectTransform hudTransform = HUDPlant.Instance.GetComponent<RectTransform>();
             hudTransform.position = posOnScreen + offsetHud;
         }
-        else if (hud.target != null || hud.gameObject.activeSelf) {
-            hud.target = null;
-            hud.gameObject.SetActive(false);
+        else if (HUDPlant.Instance.target != null || HUDPlant.Instance.gameObject.activeSelf) {
+            HUDPlant.Instance.target = null;
+            HUDPlant.Instance.gameObject.SetActive(false);
         }
     }
 }

@@ -12,7 +12,7 @@ public class Item : MonoBehaviour {
     private float stayCheckDelay = 1;
 
     private void Awake () {
-        
+
     }
 
     private void OnTriggerEnter (Collider other) {
@@ -38,6 +38,7 @@ public class Item : MonoBehaviour {
             Rigidbody rigidbody = GetComponent<Rigidbody> ();
             rigidbody.useGravity = false;
             rigidbody.velocity = Vector3.zero;
+            rigidbody.constraints = RigidbodyConstraints.FreezePosition;
         }
     }
 }

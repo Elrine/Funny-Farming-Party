@@ -10,12 +10,9 @@ public abstract class RessourceAbstact : MonoBehaviour {
 
     public void Harvest () {
         RessourceData.Drop[] dropList = ressourceType.dropItem;
-        Debug.Log("Harvest Mature:" + isMature);
         Array.Sort (dropList, new RessourceData.Drop.SortByDropRate ());
         float percent = UnityEngine.Random.Range (0, 10000) / 10000;
-        Debug.LogFormat("Percent: {0}\tMature: {1}", percent, isMature);
         foreach (var drop in dropList) {
-            Debug.LogFormat("Drop Rate: {0}\tDrop Name: {1}", drop.dropRate, drop.item.itemName);
             if (percent <= drop.dropRate && (!drop.dropWhenMaturate || isMature)) {
                 int numberOfDrop;
                 if (!isMature)

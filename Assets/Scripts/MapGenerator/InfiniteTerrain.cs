@@ -92,6 +92,10 @@ public class InfiniteTerrain : MonoBehaviour {
         }
     }
 
+    private void OnDestroy() {
+        chunksVisibleLastUpdate.Clear();
+    }
+
     public class TerrainChunk {
         GameObject meshObject;
         public Vector2 pos;

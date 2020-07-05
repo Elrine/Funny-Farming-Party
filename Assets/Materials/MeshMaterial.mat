@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MeshMaterial
-  m_Shader: {fileID: 4800000, guid: 20fab0fda5e23e54c81075f302807554, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0baa6810661600f499a0175a432665c4,
+    type: 3}
   m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -56,6 +57,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_2BACDED3: 50
+    - Vector1_36C19B72: 15
+    - Vector1_3B0CEF5D: 0
+    - Vector1_892EA44B: 10
+    - Vector1_96460767: 10
+    - Vector1_CB1272F2: 0.6
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -73,5 +80,11 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - Color_31C6C983: {r: 1, g: 0.9764151, b: 0.9764151, a: 0}
+    - Color_50569A4: {r: 0.08517268, g: 0.2075472, b: 0.0937895, a: 0}
+    - Color_818FB46: {r: 0.1801654, g: 0.3867925, b: 0.1696778, a: 0}
+    - Color_92AA6E2: {r: 1, g: 0.9982435, b: 0.589, a: 1}
+    - Color_D97FE4C1: {r: 0, g: 0.9148698, b: 1, a: 0}
+    - Color_ED22A92: {r: 0.2924528, g: 0.1182925, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -8,16 +8,20 @@ public class SlotUI : MonoBehaviour, IDropHandler {
     public Canvas canvas;
     public GameObject itemPrefab;
     public ItemUI currentItem = null;
+    [SerializeField]
+    public IInventory currentInventory = null;
 
     private void Start () {
-        InventoryPlayer.Instance.subscribeUpdate (position, inventoryUpdated);
+        if (currentInventory == null) {
+            currentInventory = InventoryPlayer.Instance;
+        }
+        currentInventory.subscribeUpdate (position, inventoryUpdated);
     }
 
     void inventoryUpdated (ItemStack stack) {
         if (stack == null) {
             if (currentItem != null) {
-                GameObject.Destroy (currentItem.gameObject);
-                currentItem = null;
+                currentItem.removeItem();
             }
         } else if (currentItem == null) {
             GameObject itemUi = GameObject.Instantiate (itemPrefab, transform.parent);
@@ -32,7 +36,7 @@ public class SlotUI : MonoBehaviour, IDropHandler {
 
     public void removeCurrentItem () {
         currentItem = null;
-        InventoryPlayer.Instance.RemoveSlot (position);
+        currentInventory.RemoveSlot (position);
     }
 
     public void OnDrop (PointerEventData eventData) {
@@ -43,8 +47,9 @@ public class SlotUI : MonoBehaviour, IDropHandler {
                 if (currentItem == null) {
                     currentItem = newItem;
                     newItem.setSlot (this);
-                    InventoryPlayer.Instance.SetItemAt (position, newItem.itemStack);
-                } else if (InventoryPlayer.Instance.SetItemAt (position, newItem.itemStack)) {
+                    currentInventory.SetItemAt (position, newItem.itemStack);
+                } else if (currentInventory.SetItemAt (position, newItem.itemStack)) {
+                    newItem.removeItem();
                     Destroy (newItem.gameObject);
                 } else {
                     newItem.resetToSlot ();

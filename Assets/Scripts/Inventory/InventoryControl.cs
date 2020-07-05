@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryControl : MonoBehaviour {
-    private Camera cam;
     private RaycastHit hit;
     [SerializeField]
     private float distanceToPlace = 10f;
@@ -11,10 +10,6 @@ public class InventoryControl : MonoBehaviour {
     private GameObject indicatorPrefab = null;
     private Vector3 targetPos = Vector3.zero;
     private GameObject oldIndicator = null;
-
-    private void Awake () {
-        cam = Camera.main;
-    }
 
     void Start () {
 
@@ -60,7 +55,7 @@ public class InventoryControl : MonoBehaviour {
     }
 
     public void UpdateColision () {
-        Ray ray = new Ray (cam.transform.position, cam.transform.forward);
+        Ray ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
         Debug.DrawRay (ray.origin, ray.direction * distanceToPlace, Color.red);
         RaycastHit[] allHit = Physics.RaycastAll (ray, distanceToPlace);
         bool hitChunk = false;

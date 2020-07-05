@@ -27,11 +27,11 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public void OnEndDrag (PointerEventData eventData) {
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
-        resetToSlot();
+        resetToSlot ();
     }
 
     public void OnDrop (PointerEventData eventData) {
-        fromSlot.OnDrop(eventData);
+        fromSlot.OnDrop (eventData);
     }
 
     // Start is called before the first frame update
@@ -73,11 +73,16 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void setSlot (SlotUI newSlot) {
         if (fromSlot != null)
-            fromSlot.removeCurrentItem();
+            fromSlot.removeCurrentItem ();
+        if (newSlot != null) {
+            rectTransform.SetParent (newSlot.GetComponent<RectTransform> ().parent, false);
+        }
         fromSlot = newSlot;
     }
 
-    private void OnDestroy() {
+    public void removeItem() {
+        Debug.LogFormat("Destroy {0}", fromSlot.position);
         fromSlot.removeCurrentItem();
+        Destroy(gameObject);
     }
 }
