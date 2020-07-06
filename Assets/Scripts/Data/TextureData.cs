@@ -22,9 +22,11 @@ public class TextureData : UpdatebleData {
 
     public void ApplyToMaterial (Material material) {
         material.SetInt ("regionCount", regions.Length);
-        material.SetColorArray ("baseColors", regions.Select(x => x.baseColor).ToArray());
-        material.SetFloatArray ("baseStartHeights", regions.Select(x => x.baseStartHeight).ToArray());
-        material.SetFloatArray ("baseBlends", regions.Select(x => x.baseBlend).ToArray());
+        for (int i = 0; i < regions.Length; i++)
+        {
+            material.SetColor("Color" + i, regions[i].baseColor);
+            material.SetFloat("Height" + i, regions[i].baseStartHeight);
+        }
 
         updateMeshHeights (material, savedMinHeight, savedMaxHeight);
     }
@@ -33,8 +35,8 @@ public class TextureData : UpdatebleData {
         this.savedMinHeight = minHeight;
         this.savedMaxHeight = maxHeight;
 
-        material.SetFloat ("minHeight", minHeight - 1);
-        material.SetFloat ("maxHeight", maxHeight);
+        material.SetFloat ("MinHeight", minHeight - 1);
+        material.SetFloat ("MaxHeight", maxHeight);
     }
 
     [System.Serializable]
