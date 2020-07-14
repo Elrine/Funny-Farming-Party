@@ -21,6 +21,17 @@ public static class Loader
         SceneManager.LoadScene(Scene.Loading.ToString());
     }
 
+    public static Scene getCurrentScene() {
+        string currentSceneName =  SceneManager.GetActiveScene().name;
+        foreach (var scene in (Scene[]) Enum.GetValues(typeof(Scene)))
+        {
+            if (scene.ToString() == currentSceneName) {
+                return scene;
+            }
+        }
+        return Scene.OuterWorld;
+    }
+
     public static void LoaderCallback() {
         onLoaderCallback();
     }

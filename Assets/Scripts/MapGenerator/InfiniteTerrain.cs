@@ -64,7 +64,7 @@ public class InfiniteTerrain : MonoBehaviour {
         }
     }
 
-    public Vector2 worldPosToChunkPos(Vector3 position) {
+    public Vector2 worldPosToChunkPos (Vector3 position) {
         return new Vector2 (position.x, position.z) / mapGenerator.terrainSettings.uniformScale;
     }
 
@@ -92,8 +92,8 @@ public class InfiniteTerrain : MonoBehaviour {
         }
     }
 
-    private void OnDestroy() {
-        chunksVisibleLastUpdate.Clear();
+    private void OnDestroy () {
+        chunksVisibleLastUpdate.Clear ();
     }
 
     public class TerrainChunk {
@@ -108,6 +108,7 @@ public class InfiniteTerrain : MonoBehaviour {
         LODInfo[] detailLevels;
         LODMesh[] lodMeshes;
         LODMesh collisionLODMesh;
+        System.Action<bool, TerrainChunk> onColliderRecived = null;
 
         MapData mapData;
         bool mapDataReceived;
@@ -151,6 +152,17 @@ public class InfiniteTerrain : MonoBehaviour {
             mapGenerator.requestMapData (pos, onMapDataReceived);
         }
 
+        public void subscribeRequestCollider (System.Action<bool, TerrainChunk> callback) {
+            if (collisionLODMesh.hasMesh && meshObject.activeSelf) {
+                callback (true, this);
+            } else
+                onColliderRecived += callback;
+        }
+
+        public void unsubscribleRequestCollider (System.Action<bool, TerrainChunk> callback) {
+            onColliderRecived -= callback;
+        }
+
         public void Update () {
             if (mapDataReceived) {
                 float viewerDstFromEdge = Mathf.Sqrt (bounds.SqrDistance (_viewerPos));
@@ -177,6 +189,8 @@ public class InfiniteTerrain : MonoBehaviour {
                     if (lodIndex == 0) {
                         if (collisionLODMesh.hasMesh) {
                             meshCollider.sharedMesh = collisionLODMesh.mesh;
+                            if (onColliderRecived != null)
+                                onColliderRecived (false, this);
                         } else if (!collisionLODMesh.hasRequestedMesh) {
                             collisionLODMesh.requestMesh (mapData);
                         }
@@ -197,6 +211,8 @@ public class InfiniteTerrain : MonoBehaviour {
 
         public void setVisible (bool visible) {
             meshObject.SetActive (visible);
+            if (onColliderRecived != null && collisionLODMesh != null && collisionLODMesh.hasMesh)
+                onColliderRecived (false, this);
         }
 
         public bool isVisible () {

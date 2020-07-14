@@ -19,6 +19,9 @@ public class Plant : RessourceAbstact {
         get {
             return currentGrowth;
         }
+        set {
+            currentGrowth = value;
+        }
     }
 
     [SerializeField]
@@ -29,6 +32,7 @@ public class Plant : RessourceAbstact {
     private bool showGrow = true;
     private Transform modelPlant;
     private Transform modelSeed;
+    public float lastUpdate = -1;
     private bool createModel = false;
     // Start is called before the first frame update
     void Start () {
@@ -51,7 +55,13 @@ public class Plant : RessourceAbstact {
 
     void Grow () {
         if (currentGrowth < 1) {
-            float deltaTime = clock.getDeltaTime ();
+            float deltaTime;
+            if (lastUpdate == -1)
+            deltaTime = clock.getDeltaTime ();
+            else {
+            deltaTime = clock.getDeltaTime(lastUpdate);
+            lastUpdate = -1;
+            }
             currentGrowth += deltaTime / plantType.seedOf.daysToGrow;
             if (currentGrowth > 1) {
                 currentGrowth = 1;
@@ -123,4 +133,24 @@ public class Plant : RessourceAbstact {
     {
         GameObject.Destroy(gameObject);
     }
+
+    public void SetVisble(bool visible) {
+        if (!visible) {
+            lastUpdate = Time.time;
+        }
+        gameObject.SetActive(visible);
+    }
+
+    public override SavableRessourceAbstact ToSavableData() {
+        SavablePlant toSave = new SavablePlant();
+        Grow();
+        toSave.data = ressourceType.ToSavableData();
+        toSave.currentGrowth = currentGrowth;
+        return toSave;
+    }
+}
+
+[System.Serializable]
+public class SavablePlant : SavableRessourceAbstact {
+    public float currentGrowth;
 }

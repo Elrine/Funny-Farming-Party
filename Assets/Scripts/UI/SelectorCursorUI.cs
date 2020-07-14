@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectorCursorUI : MonoBehaviour {
     [SerializeField]
-    private int _currentSelected;
+    private static int _currentSelected;
     public int CurrentSelected {
         get {
             return _currentSelected;

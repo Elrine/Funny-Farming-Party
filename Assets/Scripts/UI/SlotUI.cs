@@ -18,6 +18,10 @@ public class SlotUI : MonoBehaviour, IDropHandler {
         currentInventory.subscribeUpdate (position, inventoryUpdated);
     }
 
+    private void OnDestroy() {
+        currentInventory.unsubscribeUpdate(position, inventoryUpdated);
+    }
+
     void inventoryUpdated (ItemStack stack) {
         if (stack == null) {
             if (currentItem != null) {

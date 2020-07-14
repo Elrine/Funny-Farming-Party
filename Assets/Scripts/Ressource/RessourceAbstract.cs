@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class RessourceAbstact : MonoBehaviour {
     [SerializeField]
-    protected RessourceData ressourceType = null;
+    public RessourceData ressourceType = null;
     protected bool isMature = true;
 
     public void Harvest () {
@@ -31,4 +31,15 @@ public abstract class RessourceAbstact : MonoBehaviour {
     }
 
     protected abstract void OnHarvesting ();
+
+    public virtual SavableRessourceAbstact ToSavableData() {
+        SavableRessourceAbstact toSave = new SavableRessourceAbstact();
+        toSave.data = ressourceType.ToSavableData();
+        return toSave;
+    }
+}
+
+[System.Serializable]
+public class SavableRessourceAbstact {
+    public SavableRessourceData data;
 }

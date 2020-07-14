@@ -10,6 +10,23 @@ public class RessourceData : ScriptableObject {
     public Drop[] dropItem;
     public GameObject prefab;
     public float sizeRessource = 1;
+    
+    public enum RessourceType {
+        PlantType,
+        OtherType
+    }
+    public virtual RessourceType GetRessourceType {
+        get{
+            return RessourceType.OtherType;
+        }
+    }
+
+    public SavableRessourceData ToSavableData() {
+        SavableRessourceData toSave = new SavableRessourceData();
+        toSave.type = GetRessourceType;
+        toSave.ressourceName = ressourceName;
+        return toSave;
+    }
 
     [System.Serializable]
     public class Drop {
@@ -27,4 +44,10 @@ public class RessourceData : ScriptableObject {
             }
         }
     }
+}
+
+[System.Serializable]
+public class SavableRessourceData {
+    public string ressourceName;
+    public RessourceData.RessourceType type;
 }

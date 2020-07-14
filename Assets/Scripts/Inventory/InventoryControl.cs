@@ -17,7 +17,7 @@ public class InventoryControl : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (!InventoryPlayer.Instance.inventoryShown) {
+        if (InventoryPlayer.Instance != null && !InventoryPlayer.Instance.inventoryShown) {
             UpdateColision ();
             PlaceRessource ();
         }

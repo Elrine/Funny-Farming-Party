@@ -28,4 +28,17 @@ public class ItemData : ScriptableObject
         }
     }
     public int goldValue;
+
+    public SavableItemData ToSavableData() {
+        SavableItemData toSave = new SavableItemData();
+        toSave.itemName = itemName;
+        toSave.itemType = GetItemType;
+        return toSave;
+    }
+}
+
+[System.Serializable]
+public class SavableItemData {
+    public string itemName;
+    public ItemData.ItemType itemType;
 }

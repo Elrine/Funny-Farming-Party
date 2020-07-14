@@ -32,7 +32,7 @@ public class InventoryPlayer : IInventory {
     const uint sizeRowInventory = 5;
 
     private static InventoryData inventoryData = null;
-    public static InventoryData InventoryData {
+    public static InventoryData Inventory {
         get {
             return inventoryData;
         }
@@ -116,13 +116,13 @@ public class InventoryPlayer : IInventory {
     }
 
     public override void RemoveSlot (Vector2 pos) {
-            foreach (var slot in inventoryData.inventoryContent) {
-                if (slot.pos == pos) {
-                    inventoryData.inventoryContent.Remove (slot);
-                    break;
-                }
+        foreach (var slot in inventoryData.inventoryContent) {
+            if (slot.pos == pos) {
+                inventoryData.inventoryContent.Remove (slot);
+                break;
             }
-            NotifyUpdate (new InventoryData.InventorySlot (pos, null));
+        }
+        NotifyUpdate (new InventoryData.InventorySlot (pos, null));
     }
 
     public override bool SetItemAt (Vector2 pos, ItemStack stack) {
@@ -205,6 +205,10 @@ public class InventoryPlayer : IInventory {
             background.GetComponent<RectTransform> ().anchoredPosition = offsetBackground;
     }
 
+    private void OnDestroy () {
+        _instance = null;
+    }
+    
     public void setUIVisible (bool visible) {
         showInventory = visible;
         SlotUI slot;
@@ -281,14 +285,17 @@ public class InventoryPlayer : IInventory {
         if (background != null)
             background.GetComponent<RectTransform> ().anchoredPosition = offsetBackground;
     }
-}
 
-[System.Serializable]
-public class ItemStack {
-    public ItemData data;
-    public uint sizeStack;
-    public ItemStack (ItemData _data) {
-        data = _data;
-        sizeStack = 1;
+    public void setSavedInventory (SavableInventoryData savedData) {
+        InventoryData data = InventoryData.CreateInstance<InventoryData> ();
+        data.gold = savedData.gold;
+        foreach (var _slot in savedData.inventoryContent) {
+            ItemData item = ItemFactory.Instance.MakeItem (_slot.itemStack.data);
+            ItemStack stack = new ItemStack (item, _slot.itemStack.sizeStack);
+            InventoryData.InventorySlot slot = new InventoryData.InventorySlot (_slot.pos, stack);
+            data.inventoryContent.Add (slot);
+        }
+        inventoryData = data;
+        NotifyAll ();
     }
 }

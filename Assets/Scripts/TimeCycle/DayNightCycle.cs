@@ -23,9 +23,21 @@ public class DayNightCycle : MonoBehaviour {
     [SerializeField]
     private AnimationCurve lightCurve = new AnimationCurve ();
     private Light _light;
+    private static DayNightCycle _instance = null;
+    public static DayNightCycle Instance {
+        get {
+            return _instance;
+        }
+    }
 
     private void Awake () {
-        setLight ();
+        if (_instance == null) {
+            _instance = this;
+            DontDestroyOnLoad (gameObject);
+            setLight ();
+        } else {
+            Destroy (gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -61,6 +73,10 @@ public class DayNightCycle : MonoBehaviour {
 
     public float getDeltaTime () {
         return Time.deltaTime * _timeScale / 86400;
+    }
+    
+    public float getDeltaTime (float prevTime) {
+        return (Time.time - prevTime) * _timeScale / 86400;
     }
 
     private void OnValidate () {

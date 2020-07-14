@@ -6,4 +6,9 @@ using UnityEngine;
 public class PlantData : RessourceData
 {
     public float daysToGrow;
+    public override RessourceType GetRessourceType {
+        get {
+            return RessourceType.PlantType;
+        }
+    }
 }
