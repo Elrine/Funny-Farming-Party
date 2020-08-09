@@ -27,7 +27,10 @@ public class InventoryControl : MonoBehaviour {
         if (InventoryPlayer.Instance.getCurrentSlot () && InventoryPlayer.Instance.getCurrentSlot ().GetItemType == ItemData.ItemType.SeedType) {
             SeedData seed = InventoryPlayer.Instance.getCurrentSlot () as SeedData;
             Vector2 targetPosOnGrid = new Vector2 (targetPos.x, targetPos.z);
-            if (targetPos != Vector3.zero && RessouceGenerator.Instance.placeValid (targetPosOnGrid, seed.seedOf)) {
+            Vector3 portalPos = SaveManager.Instance.env.portalPosition;
+            Vector2 portalPosOnGrid = new Vector2(portalPos.x, portalPos.z);
+            float disToPortal = Vector2.Distance(portalPosOnGrid, targetPosOnGrid);
+            if (targetPos != Vector3.zero && RessouceGenerator.Instance.placeValid (targetPosOnGrid, seed.seedOf) && disToPortal <= SaveManager.Instance.env.forceFieldSize) {
                 if (oldIndicator == null) {
                     if (indicatorPrefab == null)
                         oldIndicator = GameObject.CreatePrimitive (PrimitiveType.Sphere);
@@ -55,36 +58,38 @@ public class InventoryControl : MonoBehaviour {
     }
 
     public void UpdateColision () {
-        Ray ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
-        Debug.DrawRay (ray.origin, ray.direction * distanceToPlace, Color.red);
-        RaycastHit[] allHit = Physics.RaycastAll (ray, distanceToPlace);
-        bool hitChunk = false;
-        bool hitRessource = false;
-        InventoryPlayer.SlotType slotType = InventoryPlayer.Instance.getCurrentSlotType ();
-        foreach (var _hit in allHit) {
-            if (slotType == InventoryPlayer.SlotType.Plant && _hit.collider.gameObject.CompareTag ("Chunk")) {
-                hitChunk = true;
-                hit = _hit;
+        if (Camera.main != null) {
+            Ray ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
+            Debug.DrawRay (ray.origin, ray.direction * distanceToPlace, Color.red);
+            RaycastHit[] allHit = Physics.RaycastAll (ray, distanceToPlace);
+            bool hitChunk = false;
+            bool hitRessource = false;
+            InventoryPlayer.SlotType slotType = InventoryPlayer.Instance.getCurrentSlotType ();
+            foreach (var _hit in allHit) {
+                if (slotType == InventoryPlayer.SlotType.Plant && _hit.collider.gameObject.CompareTag ("Chunk")) {
+                    hitChunk = true;
+                    hit = _hit;
+                }
+                if (Input.GetMouseButtonDown (0) && slotType != InventoryPlayer.SlotType.Plant && _hit.collider.gameObject.CompareTag ("Plant")) {
+                    hitRessource = true;
+                    hit = _hit;
+                }
             }
-            if (Input.GetMouseButtonDown (0) && slotType != InventoryPlayer.SlotType.Plant && _hit.collider.gameObject.CompareTag ("Plant")) {
-                hitRessource = true;
-                hit = _hit;
-            }
-        }
-        if (hitChunk) {
-            MeshCollider chunckCollider = hit.collider as MeshCollider;
-            if (chunckCollider) {
-                targetPos = FindPointInChunck (chunckCollider);
-                Debug.DrawRay (targetPos, Vector3.up * 3, Color.green);
-            } else
+            if (hitChunk) {
+                MeshCollider chunckCollider = hit.collider as MeshCollider;
+                if (chunckCollider) {
+                    targetPos = FindPointInChunck (chunckCollider);
+                    Debug.DrawRay (targetPos, Vector3.up * 3, Color.green);
+                } else
+                    targetPos = Vector3.zero;
+            } else {
                 targetPos = Vector3.zero;
-        } else {
-            targetPos = Vector3.zero;
-            if (hitRessource) {
-                BoxCollider ressourceCollider = hit.collider as BoxCollider;
-                if (ressourceCollider) {
-                    RessourceAbstact plant = ressourceCollider.GetComponent<RessourceAbstact> ();
-                    plant.Harvest ();
+                if (hitRessource) {
+                    BoxCollider ressourceCollider = hit.collider as BoxCollider;
+                    if (ressourceCollider) {
+                        RessourceAbstact plant = ressourceCollider.GetComponent<RessourceAbstact> ();
+                        plant.Harvest ();
+                    }
                 }
             }
         }

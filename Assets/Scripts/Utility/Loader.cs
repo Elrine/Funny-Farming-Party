@@ -9,7 +9,8 @@ public static class Loader
     public enum Scene {
         OuterWorld,
         Home,
-        Loading
+        Loading,
+        Default
     }
 
     private static Action onLoaderCallback;
@@ -29,7 +30,7 @@ public static class Loader
                 return scene;
             }
         }
-        return Scene.OuterWorld;
+        return Scene.Default;
     }
 
     public static void LoaderCallback() {

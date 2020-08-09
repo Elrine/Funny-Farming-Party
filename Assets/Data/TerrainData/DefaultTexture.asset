@@ -19,25 +19,30 @@ MonoBehaviour:
     baseStartHeight: 0
     baseBlend: 0
     plantVaild: []
+    isWaterLevel: 0
   - name: Sand
     baseColor: {r: 0.8841309, g: 0.8962264, b: 0.62144, a: 0}
     baseStartHeight: 0.242
     baseBlend: 0
     plantVaild: []
+    isWaterLevel: 1
   - name: Grass
     baseColor: {r: 0.4305358, g: 0.7075472, b: 0.45933026, a: 0}
     baseStartHeight: 0.291
     baseBlend: 0
     plantVaild:
     - Sphere
+    isWaterLevel: 0
   - name: High Grass
     baseColor: {r: 0.26147485, g: 0.4716981, b: 0.25587398, a: 0}
     baseStartHeight: 0.37
     baseBlend: 0
     plantVaild:
     - Sphere
+    isWaterLevel: 0
   - name: Rock
     baseColor: {r: 0.3962264, g: 0.31812936, b: 0.12522249, a: 0}
     baseStartHeight: 0.664
     baseBlend: 0.21
     plantVaild: []
+    isWaterLevel: 0

@@ -24,22 +24,26 @@ public class InfiniteTerrain : MonoBehaviour {
     static List<TerrainChunk> chunksVisibleLastUpdate = new List<TerrainChunk> ();
     Vector2 oldViewerPos;
 
-    private void Start () {
+    private IEnumerator Start () {
         maxViewDst = detailLevels[detailLevels.Length - 1].visibleDstThreshold;
         mapGenerator = FindObjectOfType<MapGenerator> ();
-        if (viewer == null) {
-            viewer = GameObject.FindWithTag ("Player").transform;
-        }
+        yield return new WaitWhile (() => viewer == null);
         chunkSize = MapGenerator.mapChunkSize - 1;
         chunkVisibleInViewDis = Mathf.RoundToInt (maxViewDst / chunkSize);
         UpdateVisibleChunk ();
     }
 
     private void Update () {
-        _viewerPos = new Vector2 (viewer.position.x, viewer.position.z) / mapGenerator.terrainSettings.uniformScale;
-        if ((oldViewerPos - _viewerPos).sqrMagnitude > sqrViewerThesholdToUpdate) {
-            oldViewerPos = _viewerPos;
-            UpdateVisibleChunk ();
+        if (viewer == null) {
+            GameObject player = GameObject.FindWithTag ("Player");
+            if (player != null)
+            viewer = player.transform;
+        } else {
+            _viewerPos = new Vector2 (viewer.position.x, viewer.position.z) / mapGenerator.terrainSettings.uniformScale;
+            if ((oldViewerPos - _viewerPos).sqrMagnitude > sqrViewerThesholdToUpdate) {
+                oldViewerPos = _viewerPos;
+                UpdateVisibleChunk ();
+            }
         }
     }
 

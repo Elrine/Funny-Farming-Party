@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LookAtInfo : MonoBehaviour {
 
-    private Camera cam;
+    private Camera cam = null;
     private Plant targetPlant;
     private RaycastHit hit;
     [SerializeField]
@@ -15,13 +15,17 @@ public class LookAtInfo : MonoBehaviour {
     // Start is called before the first frame update
     void Start () {
         cam = Camera.main;
-        HUDPlant.Instance.gameObject.SetActive (false);
+        // HUDPlant.Instance.gameObject.SetActive (false);
     }
 
     // Update is called once per frame
     void Update () {
+        if (cam == null) {
+            cam = Camera.main;
+        } else {
         UpdateColision();
         UpdateHudPlant();
+        }
     }
 
     void UpdateColision () {
@@ -47,7 +51,7 @@ public class LookAtInfo : MonoBehaviour {
             RectTransform hudTransform = HUDPlant.Instance.GetComponent<RectTransform>();
             hudTransform.position = posOnScreen + offsetHud;
         }
-        else if (HUDPlant.Instance.target != null || HUDPlant.Instance.gameObject.activeSelf) {
+        else if (HUDPlant.Instance != null && (HUDPlant.Instance.target != null || HUDPlant.Instance.gameObject.activeSelf)) {
             HUDPlant.Instance.target = null;
             HUDPlant.Instance.gameObject.SetActive(false);
         }

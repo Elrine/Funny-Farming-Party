@@ -14,6 +14,7 @@ public class SaveManager : MonoBehaviour {
 
     public string environementName = null;
     public EnvironementData env = null;
+    SaveData saveObject = null;
 
     private void Awake () {
         if (_instance == null) {
@@ -58,42 +59,41 @@ public class SaveManager : MonoBehaviour {
         DayNightCycle.Instance.currentTime = env.currentTime;
     }
 
-    public IEnumerator LoadWorld () {
-        SaveData saveObject = new SaveData ();
+    public void createWorld () {
+        Loader.LoadScrene (Loader.Scene.OuterWorld);
+    }
+
+    public void LoadWorld () {
         string data = SaveSystem.Load (environementName);
         if (data != null) {
             saveObject = JsonUtility.FromJson<SaveData> (data);
             StartCoroutine (setEnv (saveObject.env));
-            timeout = 0;
-            yield return new WaitUntil (() => RessouceGenerator.Instance != null || timeout > 120);
-            timeout = -1;
-            if (RessouceGenerator.Instance == null)
-                Debug.LogError ("Ressource Generator not found");
-            else {
-                RessouceGenerator.Instance.listSavedRessource.Clear ();
-                RessouceGenerator.Instance.listSavedRessource = saveObject.listRessource;
-                if (saveObject.env.playerScene == Loader.Scene.OuterWorld) {
-                    StartCoroutine (RessouceGenerator.Instance.placeSavedRessource ());
-                }
-                timeout = 0;
-                yield return new WaitUntil (() => InventoryPlayer.Instance != null || timeout > 120);
-                timeout = -1;
-                if (InventoryPlayer.Instance != null) {
-                    InventoryPlayer.Instance.setSavedInventory (saveObject.inventoryPlayer);
-                }
-            }
+            RessouceGenerator.listSavedRessource = saveObject.listRessource;
+            InventoryPlayer.setSavedInventory (saveObject.inventoryPlayer);
         }
     }
 
     private void Update () {
-        if (timeout >= 0)
+        if (timeout >= 0) {
             timeout += Time.unscaledDeltaTime;
-        if (Input.GetKeyDown (KeyCode.M)) {
-            SaveWorld ();
+            Debug.LogFormat ("timeout:{0}, instance of inventory: {1}, should finish wait {2}", timeout, InventoryPlayer.Instance != null, InventoryPlayer.Instance != null || timeout > 120);
         }
-        if (Input.GetKeyDown (KeyCode.L)) {
-            StartCoroutine (LoadWorld ());
+        if (Loader.getCurrentScene () != Loader.Scene.Default) {
+            if (Input.GetKeyDown (KeyCode.M)) {
+                SaveWorld ();
+            }
+            if (Input.GetKeyDown (KeyCode.L)) {
+                LoadWorld ();
+            }
         }
+    }
+
+    public void changeSeed (float seed) {
+        env.seed = Mathf.FloorToInt (seed);
+    }
+
+    public void changeWorldName (string value) {
+        environementName = value;
     }
 }
 

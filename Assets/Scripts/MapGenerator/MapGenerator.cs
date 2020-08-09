@@ -24,8 +24,28 @@ public class MapGenerator : MonoBehaviour {
 
     public bool autoUpdate;
 
+    private static MapGenerator instance = null;
+    public static MapGenerator Instance {
+        get {
+            return instance;
+        }
+    }
+
     Queue<MapThreadInfo<MapData>> mapDataThreadInfoQueue = new Queue<MapThreadInfo<MapData>> ();
     Queue<MapThreadInfo<MeshData>> meshDataThreadInfoQueue = new Queue<MapThreadInfo<MeshData>> ();
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+        if (SaveManager.Instance.env.seed != heightMapSettings.seed) {
+            heightMapSettings.seed = SaveManager.Instance.env.seed;
+        }
+    }
+
+    private void OnDestroy() {
+        instance = null;
+    }
 
     public void drawMapInEditor () {
         MapData map = generateMapData (Vector2.zero, false);

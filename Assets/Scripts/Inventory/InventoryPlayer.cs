@@ -208,7 +208,7 @@ public class InventoryPlayer : IInventory {
     private void OnDestroy () {
         _instance = null;
     }
-    
+
     public void setUIVisible (bool visible) {
         showInventory = visible;
         SlotUI slot;
@@ -225,8 +225,10 @@ public class InventoryPlayer : IInventory {
             goldText.text = "Gold:" + inventoryData.gold.ToString ();
         }
         RigidbodyFirstPersonController player = FindObjectOfType<RigidbodyFirstPersonController> ();
-        player.enabled = !showInventory;
-        player.mouseLook.SetCursorLock (!showInventory);
+        if (player != null) {
+            player.enabled = !showInventory;
+            player.mouseLook.SetCursorLock (!showInventory);
+        }
     }
 
     private void Start () {
@@ -249,7 +251,6 @@ public class InventoryPlayer : IInventory {
     }
 
     public void RemoveItem (Vector2 pos, uint number = 1) {
-
         foreach (var slot in inventoryData.inventoryContent) {
             if (slot.pos == pos) {
                 ItemStack stack = slot.itemStack;
@@ -259,6 +260,7 @@ public class InventoryPlayer : IInventory {
                     slot.itemStack.sizeStack -= number;
                     NotifyUpdate (slot);
                 }
+                break;
             }
         }
     }
@@ -286,7 +288,7 @@ public class InventoryPlayer : IInventory {
             background.GetComponent<RectTransform> ().anchoredPosition = offsetBackground;
     }
 
-    public void setSavedInventory (SavableInventoryData savedData) {
+    public static void setSavedInventory (SavableInventoryData savedData) {
         InventoryData data = InventoryData.CreateInstance<InventoryData> ();
         data.gold = savedData.gold;
         foreach (var _slot in savedData.inventoryContent) {
@@ -296,6 +298,8 @@ public class InventoryPlayer : IInventory {
             data.inventoryContent.Add (slot);
         }
         inventoryData = data;
-        NotifyAll ();
+        if (_instance != null) {
+            _instance.NotifyAll();
+        }
     }
 }

@@ -7,6 +7,7 @@ public class EnvironementData
 {
     public int seed = 0;
     public Vector3 portalPosition = Vector3.negativeInfinity;
+    public float forceFieldSize = 20;
     public Vector3 playerPosition = Vector3.negativeInfinity;
     public Quaternion playerRotation = Quaternion.identity;
     public float currentTime;

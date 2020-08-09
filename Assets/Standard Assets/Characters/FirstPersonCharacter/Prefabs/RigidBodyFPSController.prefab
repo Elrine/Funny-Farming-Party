@@ -252,6 +252,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1208c6132519b68458983e5ba9044849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hud: {fileID: 0}
   distanceToInfo: 30
   offsetHud: {x: 150, y: 0}

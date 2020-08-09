@@ -60,10 +60,10 @@ public class SelectorCursorUI : MonoBehaviour {
             CurrentSelected = 4;
         }
         if (Input.mouseScrollDelta.y > 0) {
-            CurrentSelected += CurrentSelected == 4 ? 0 : 1;
+            CurrentSelected += CurrentSelected == 4 ? -4 : 1;
         }
         if (Input.mouseScrollDelta.y < 0) {
-            CurrentSelected -= CurrentSelected == 0 ? 0 : 1;
+            CurrentSelected -= CurrentSelected == 0 ? -4 : 1;
         }
     }
 

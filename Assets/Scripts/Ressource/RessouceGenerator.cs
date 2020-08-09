@@ -10,9 +10,7 @@ public class RessouceGenerator : MonoBehaviour {
         }
     }
     public List<Ressource> listRessource = new List<Ressource> ();
-    public List<SavableRessource> listSavedRessource = new List<SavableRessource> ();
-    public int sqrShowDistance = 250;
-    private const int ressourceSizeMax = 3;
+    public static List<SavableRessource> listSavedRessource = new List<SavableRessource> ();
     static Dictionary<InfiniteTerrain.TerrainChunk, Queue<SavableRessource>> savableRessourceOfChunk = new Dictionary<InfiniteTerrain.TerrainChunk, Queue<SavableRessource>> ();
 
     private void Awake () {
@@ -87,9 +85,10 @@ public class RessouceGenerator : MonoBehaviour {
         clearRessource ();
         InfiniteTerrain terrainManager = FindObjectOfType<InfiniteTerrain> ();
         for (int i = 0; terrainManager == null && i < 10; i++) {
-            yield return new WaitForSeconds (.1f);
+            yield return new WaitForSeconds (1f);
             terrainManager = FindObjectOfType<InfiniteTerrain> ();
         }
+        Debug.Log ($"list save {listSavedRessource.Count}");
         foreach (var item in listSavedRessource) {
             InfiniteTerrain.TerrainChunk chunk = terrainManager.getChunkOfPoint (item.pos);
             for (int i = 0; chunk == null && i < 10; i++) {

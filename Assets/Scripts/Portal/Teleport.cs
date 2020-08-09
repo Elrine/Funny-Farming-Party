@@ -32,7 +32,7 @@ public class Teleport : MonoBehaviour {
             if (player) {
                 isTeleported = false;
                 float angle = UnityEngine.Random.Range (-1000, 1000) * Mathf.PI / 1000;
-                Vector3 offset = new Vector3 (Mathf.Cos (angle) , .5f, Mathf.Sin (angle)) * 2;
+                Vector3 offset = new Vector3 (Mathf.Cos (angle) , 1, Mathf.Sin (angle)) * 2;
                 player.transform.SetPositionAndRotation(transform.position + offset, Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.up));
                 if (InventoryPlayer.Instance != null) {
                     InventoryPlayer.Instance.NotifyAll ();
