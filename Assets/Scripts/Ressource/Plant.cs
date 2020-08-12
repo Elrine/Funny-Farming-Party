@@ -30,6 +30,7 @@ public class Plant : RessourceAbstact {
     private DayNightCycle clock;
     [SerializeField]
     private bool showGrow = true;
+    [SerializeField]
     private Transform modelPlant;
     private Transform modelSeed;
     public float lastUpdate = -1;
@@ -93,7 +94,7 @@ public class Plant : RessourceAbstact {
         if (modelPlant == null || modelSeed == null) {
             Transform[] transforms = gameObject.GetComponentsInChildren<Transform> ();
             foreach (var _transform in transforms) {
-                if (_transform.gameObject.tag == "Plant") {
+                if (_transform.gameObject.tag == "Plant" && _transform != transform) {
                     modelPlant = _transform;
                 }
                 if (_transform.gameObject.tag == "Seed") {

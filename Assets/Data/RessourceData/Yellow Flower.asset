@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5f6c3135cd5f3419b1f143a03ed64d, type: 3}
+  m_Name: Yellow Flower
+  m_EditorClassIdentifier: 
+  ressourceName: Yellow Flower
+  description: 
+  dropItem: []
+  prefab: {fileID: 5696842845874514787, guid: 6ea0a730d455d0441a8f22fc68df78f8, type: 3}
+  sizeRessource: 1
+  daysToGrow: 2

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f458a91804131f84a88c64ae0b59e80c, type: 3}
+  m_Name: BluePetal
+  m_EditorClassIdentifier: 
+  itemName: Blue Petal
+  itemDescription: 
+  itemInWorld: {fileID: 685137719051418616, guid: 92d847948dfa3b741a97879af396b1c0,
+    type: 3}
+  itemInHUD: {fileID: 2800000, guid: 4b64962a3c917204aa5b73bbb097beed, type: 3}
+  goldValue: 2

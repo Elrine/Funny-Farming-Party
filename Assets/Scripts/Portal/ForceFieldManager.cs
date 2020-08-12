@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 public class ForceFieldManager : MonoBehaviour
 {
     [SerializeField]
-    VisualEffect effect;
+    GameObject forceField = null;
     [SerializeField]
     float radius = 20;
 
@@ -18,7 +18,7 @@ public class ForceFieldManager : MonoBehaviour
         set {
             radius = value;
             SaveManager.Instance.env.forceFieldSize = radius;
-            effect.SetFloat("Radius", radius);
+            forceField.transform.localScale  = Vector3.one * radius * 2;
         }
     }
 
@@ -30,7 +30,7 @@ public class ForceFieldManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        effect.enabled = Loader.getCurrentScene() == Loader.Scene.OuterWorld;
+        forceField.SetActive(Loader.getCurrentScene() == Loader.Scene.OuterWorld);
     }
 
     // Update is called once per frame
@@ -44,8 +44,8 @@ public class ForceFieldManager : MonoBehaviour
     }
 
     private void OnValidate() {
-        if (effect != null) {
-            effect.SetFloat("Radius", radius);
+        if (forceField != null) {
+            forceField.transform.localScale  = Vector3.one * radius * 2;
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu ()]
+[CreateAssetMenu (menuName = "Item/SeedData")]
 public class SeedData : ItemData {
     public override ItemType GetItemType {
         get {

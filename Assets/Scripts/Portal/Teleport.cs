@@ -13,6 +13,7 @@ public class Teleport : MonoBehaviour {
         if (other.CompareTag ("Player")) {
             RessouceGenerator.Instance.saveRessource();
             RessouceGenerator.Instance.clearRessource();
+            DayNightCycle.Instance.gameObject.GetComponentInChildren<Light>().enabled = toScene == Loader.Scene.OuterWorld;
             Loader.LoadScrene (toScene);
         }
     }

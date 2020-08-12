@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f183dd06538f3fb4094f34a46762d64b, type: 3}
+  m_Name: GreenSeed
+  m_EditorClassIdentifier: 
+  itemName: Green flower seed
+  itemDescription: 
+  itemInWorld: {fileID: 1451494233063223941, guid: 776e7183e59705f46a4cb77e44956530,
+    type: 3}
+  itemInHUD: {fileID: 2800000, guid: 24356000a2875744b8ecfe9455e49d95, type: 3}
+  goldValue: 2
+  seedOf: {fileID: 11400000, guid: d38402fd9253a314f9b43d4bfbb1ff7d, type: 2}

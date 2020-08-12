@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: DefaultShop
   m_EditorClassIdentifier: 
   sellItem:
+  - {fileID: 11400000, guid: f360d452e849ca141b55a958f50f92bb, type: 2}
+  - {fileID: 11400000, guid: 0b3a69cf0b08c9a40894069c4ab53a69, type: 2}
   - {fileID: 11400000, guid: 531ebcc01b6a69648b160f7d344688f1, type: 2}
+  - {fileID: 11400000, guid: 8dcb0e17116fef6458f16bec041ff919, type: 2}
+  - {fileID: 11400000, guid: aba4b5cac5df2ab49bd133df329018fd, type: 2}
+  - {fileID: 11400000, guid: 25752c05704938e4587e4c8e1753f2e7, type: 2}

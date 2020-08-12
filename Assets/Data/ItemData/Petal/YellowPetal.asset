@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f458a91804131f84a88c64ae0b59e80c, type: 3}
+  m_Name: YellowPetal
+  m_EditorClassIdentifier: 
+  itemName: Yellow petal
+  itemDescription: 
+  itemInWorld: {fileID: 6036853623908266599, guid: a1f95c87a2a0f1446aefec23f5569dbb,
+    type: 3}
+  itemInHUD: {fileID: 2800000, guid: 2941078eccd2e1642935c69c54eb179c, type: 3}
+  goldValue: 3

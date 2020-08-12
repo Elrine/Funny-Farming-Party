@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f183dd06538f3fb4094f34a46762d64b, type: 3}
+  m_Name: YellowSeed
+  m_EditorClassIdentifier: 
+  itemName: Yellow flower seed
+  itemDescription: 
+  itemInWorld: {fileID: 6116443302099190983, guid: 5d57b4238461694418090d2c7a3abdf4,
+    type: 3}
+  itemInHUD: {fileID: 2800000, guid: 56af5a35ab6852d4a8bf0c0ead6afdc4, type: 3}
+  goldValue: 5
+  seedOf: {fileID: 11400000, guid: 1f41b77c4a083aa469dca14b29b8d048, type: 2}

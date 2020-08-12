@@ -28,8 +28,7 @@ public class InventoryControl : MonoBehaviour {
             SeedData seed = InventoryPlayer.Instance.getCurrentSlot () as SeedData;
             Vector2 targetPosOnGrid = new Vector2 (targetPos.x, targetPos.z);
             Vector3 portalPos = SaveManager.Instance.env.portalPosition;
-            Vector2 portalPosOnGrid = new Vector2(portalPos.x, portalPos.z);
-            float disToPortal = Vector2.Distance(portalPosOnGrid, targetPosOnGrid);
+            float disToPortal = Vector3.Distance(portalPos, targetPos);
             if (targetPos != Vector3.zero && RessouceGenerator.Instance.placeValid (targetPosOnGrid, seed.seedOf) && disToPortal <= SaveManager.Instance.env.forceFieldSize) {
                 if (oldIndicator == null) {
                     if (indicatorPrefab == null)
