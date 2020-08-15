@@ -18,14 +18,14 @@ public class SlotUI : MonoBehaviour, IDropHandler {
         currentInventory.subscribeUpdate (position, inventoryUpdated);
     }
 
-    private void OnDestroy() {
-        currentInventory.unsubscribeUpdate(position, inventoryUpdated);
+    private void OnDestroy () {
+        currentInventory.unsubscribeUpdate (position, inventoryUpdated);
     }
 
     void inventoryUpdated (ItemStack stack) {
         if (stack == null) {
             if (currentItem != null) {
-                currentItem.removeItem();
+                currentItem.removeItem ();
             }
         } else if (currentItem == null) {
             GameObject itemUi = GameObject.Instantiate (itemPrefab, transform.parent);
@@ -53,7 +53,7 @@ public class SlotUI : MonoBehaviour, IDropHandler {
                     newItem.setSlot (this);
                     currentInventory.SetItemAt (position, newItem.itemStack);
                 } else if (currentInventory.SetItemAt (position, newItem.itemStack)) {
-                    newItem.removeItem();
+                    newItem.removeItem ();
                     Destroy (newItem.gameObject);
                 } else {
                     newItem.resetToSlot ();

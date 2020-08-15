@@ -66,7 +66,7 @@ public class ShopInventory : IInventory {
         int index = Mathf.RoundToInt (pos.x + pos.y * slotByRow);
         if (_data.sellItem.Count > index && InventoryPlayer.Instance.Gold >= _data.sellItem[index].goldValue) {
             InventoryPlayer.Instance.Gold -= _data.sellItem[index].goldValue;
-        } else {
+        } else if (_data.sellItem.Count > index) {
             InventoryPlayer.Instance.RewindLastItem ();
         }
         NotifyUpdate (index);

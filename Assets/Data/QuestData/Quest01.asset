@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a13adbdcf59fc4f973f0b88ead8811, type: 3}
+  m_Name: Quest01
+  m_EditorClassIdentifier: 
+  questName: First step
+  questDescription: '"I finally "'
+  rewards:
+  - type: 0
+    gold: 0
+    item:
+      data: {fileID: 11400000, guid: 0b3a69cf0b08c9a40894069c4ab53a69, type: 2}
+      sizeStack: 5
+  steps:
+  - type: 0
+    collectParams:
+      item: {fileID: 11400000, guid: f45a158d861cdff49a9685b04b94e504, type: 2}
+      needed: 10
+    killParams:
+      target: 
+      needed: 0
+    talkParams:
+      target: 

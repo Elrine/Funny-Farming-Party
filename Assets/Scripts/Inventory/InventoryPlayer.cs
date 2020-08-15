@@ -24,7 +24,7 @@ public class InventoryPlayer : IInventory {
         set {
             inventoryData.gold = value;
             if (goldText != null)
-                goldText.text = "Gold:" + inventoryData.gold.ToString ();
+                goldText.text = inventoryData.gold.ToString ();
         }
     }
 
@@ -149,6 +149,7 @@ public class InventoryPlayer : IInventory {
         InventoryData.InventorySlot rewindSlot = new InventoryData.InventorySlot (lastSlot.pos, null);
         foreach (var slot in inventoryData.inventoryContent) {
             if (slot.pos == lastSlot.pos) {
+                Debug.LogFormat ("Rewind item: {0} x{1}", slot.itemStack.data.itemName, slot.itemStack.sizeStack);
                 if (slot.itemStack.sizeStack == lastSlot.itemStack.sizeStack) {
                     inventoryData.inventoryContent.Remove (slot);
                 } else {
@@ -222,7 +223,7 @@ public class InventoryPlayer : IInventory {
         }
         if (showInventory) {
             NotifyAll ();
-            goldText.text = "Gold:" + inventoryData.gold.ToString ();
+            goldText.text = inventoryData.gold.ToString ();
         }
         RigidbodyFirstPersonController player = FindObjectOfType<RigidbodyFirstPersonController> ();
         if (player != null) {
@@ -299,7 +300,7 @@ public class InventoryPlayer : IInventory {
         }
         inventoryData = data;
         if (_instance != null) {
-            _instance.NotifyAll();
+            _instance.NotifyAll ();
         }
     }
 }

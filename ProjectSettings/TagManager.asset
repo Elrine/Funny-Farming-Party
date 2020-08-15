@@ -7,6 +7,7 @@ TagManager:
   - Chunk
   - Seed
   - Plant
+  - DragCanvas
   layers:
   - Default
   - TransparentFX

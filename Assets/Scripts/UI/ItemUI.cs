@@ -17,6 +17,7 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public void OnBeginDrag (PointerEventData eventData) {
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = .6f;
+        transform.SetParent(GameObject.FindGameObjectWithTag("DragCanvas").transform);
     }
 
     public void OnDrag (PointerEventData eventData) {
@@ -38,7 +39,7 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     private void Awake () {
         canvasGroup = GetComponent<CanvasGroup> ();
         stackNumberUI = GetComponentInChildren<Text> ();
-        itemImage = GetComponent<RawImage> ();
+        itemImage = GetComponentInChildren<RawImage> ();
         rectTransform = GetComponent<RectTransform> ();
     }
 
@@ -68,6 +69,7 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     }
 
     public void resetToSlot () {
+        rectTransform.SetParent(fromSlot.transform.parent);
         rectTransform.anchoredPosition = fromSlot.GetComponent<RectTransform> ().anchoredPosition;
     }
 
