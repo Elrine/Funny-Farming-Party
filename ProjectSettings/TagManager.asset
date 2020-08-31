@@ -8,6 +8,9 @@ TagManager:
   - Seed
   - Plant
   - DragCanvas
+  - PlantRessource
+  - ProjectileSpawn
+  - Projectile
   layers:
   - Default
   - TransparentFX
