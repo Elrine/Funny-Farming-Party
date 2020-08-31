@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Item/SpellData")]
+[CreateAssetMenu (menuName = "CustomData/Item/SpellData")]
 public class SpellData : ItemData
 {
     public override ItemType GetItemType {

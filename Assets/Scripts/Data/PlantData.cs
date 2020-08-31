@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ressource/PlantData")]
+[CreateAssetMenu(menuName = "CustomData/Ressource/PlantData")]
 public class PlantData : RessourceData
 {
     public float daysToGrow;

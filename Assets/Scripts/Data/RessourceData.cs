@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Ressource/RessourceData")]
+[CreateAssetMenu (menuName = "CustomData/Ressource/RessourceData")]
 public class RessourceData : ScriptableObject {
     public string ressourceName;
     [TextArea]

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu()]
+[CreateAssetMenu(menuName="CustomData/Map/NoiseData")]
 public class NoiseData : UpdatebleData
 {
     public Noise.NormalizeMode normalizeMode;

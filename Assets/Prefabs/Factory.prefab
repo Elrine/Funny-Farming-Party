@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3911031024797176691}
   - component: {fileID: 1080833874429673685}
   - component: {fileID: 4175955449288045506}
+  - component: {fileID: 186975390106892680}
   m_Layer: 0
   m_Name: Factory
   m_TagString: Untagged
@@ -101,3 +102,17 @@ MonoBehaviour:
   listQuest:
   - {fileID: 11400000, guid: e14e1e3729a6f484eb52593792219abf, type: 2}
   - {fileID: 11400000, guid: ade235c5351a6b445a950b2ab3861117, type: 2}
+--- !u!114 &186975390106892680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911031024797176652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b226b6eceed599a468c722340e91fe81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listReceipe:
+  - {fileID: 11400000, guid: 755ba1c54be9b29439c4d396ed139c78, type: 2}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Ressource/EnemyData")]
+[CreateAssetMenu (menuName = "CustomData/Ressource/EnemyData")]
 public class EnemyData : RessourceData
 {
     public override RessourceType GetRessourceType {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "QuestData", menuName = "Quest/QuestData", order = 0)]
+[CreateAssetMenu(fileName = "QuestData", menuName = "CustomData/Quest/QuestData", order = 0)]
 public class QuestData : ScriptableObject {
     public string questName;
     [SerializeField]

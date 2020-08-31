@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Quest", menuName = "Quest/Quest", order = 0)]
+[CreateAssetMenu(fileName = "Quest", menuName = "CustomData/Quest/Quest", order = 0)]
 public class Quest : ScriptableObject {
     public QuestData data;
     public int currentStepIndex;

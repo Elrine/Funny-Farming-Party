@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu ()]
+[CreateAssetMenu (menuName="CustomData/Map/TextureData")]
 public class TextureData : UpdatebleData {
     public Region[] regions;
 

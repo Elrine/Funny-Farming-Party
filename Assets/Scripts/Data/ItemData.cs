@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Item/ItemData")]
+[CreateAssetMenu(menuName = "CustomData/Item/ItemData")]
 public class ItemData : ScriptableObject
 {
     public string itemName;

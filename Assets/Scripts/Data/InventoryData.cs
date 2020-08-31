@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Inventory/InventoryData")]
+[CreateAssetMenu (menuName = "CustomData/Inventory/InventoryData")]
 public class InventoryData : ScriptableObject {
     public List<InventorySlot> inventoryContent = new List<InventorySlot>();
     public int gold;

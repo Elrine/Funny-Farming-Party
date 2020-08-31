@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efd1cad933bd4cd4183f32b98c17aec1, type: 3}
-  m_Name: GlowRay
+  m_Name: GrowRay
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   itemSource:
   - {fileID: 0}
   - {fileID: 0}
@@ -21,13 +21,5 @@ MonoBehaviour:
   - {fileID: 0}
   attributes:
   - type: 0
-    needed: 0
-  - type: 0
-    needed: 0
-  - type: 0
-    needed: 0
-  - type: 0
-    needed: 0
-  - type: 0
-    needed: 0
-  result: {fileID: 0}
+    needed: 10
+  result: {fileID: 11400000, guid: b97a8c9a85086ac4792da88b2ceba445, type: 2}

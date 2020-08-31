@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu()]
+[CreateAssetMenu(menuName="CustomData/Map/TerrainData")]
 public class TerrainData : UpdatebleData
 {
     public float uniformScale = 2f;
