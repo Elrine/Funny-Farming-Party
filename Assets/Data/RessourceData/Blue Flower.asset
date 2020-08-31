@@ -14,7 +14,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ressourceName: Blue Flower
   description: 
-  dropItem: []
+  dropItem:
+  - item: {fileID: 11400000, guid: c21c64a5266923a4c83a22b74f4433bc, type: 2}
+    dropRate: 1
+    minDrop: 2
+    maxDrop: 3
+    numberDrop:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.14908034
+        outSlope: 0.14908034
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.9998429
+      - serializedVersion: 3
+        time: 0.49995926
+        value: 0.33645928
+        inSlope: 0.53226376
+        outSlope: 0.53226376
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.09059255
+      - serializedVersion: 3
+        time: 0.8990537
+        value: 0.66871405
+        inSlope: 2.1275704
+        outSlope: 2.1275704
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 4.2657924
+        outSlope: 4.2657924
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.049838264
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    dropWhenMaturate: 1
+  - item: {fileID: 11400000, guid: 0b3a69cf0b08c9a40894069c4ab53a69, type: 2}
+    dropRate: 1
+    minDrop: 0
+    maxDrop: 2
+    numberDrop:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.5
+        inSlope: 0.016849361
+        outSlope: 0.016849361
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 0.9
+        value: 1
+        inSlope: 0.028226292
+        outSlope: 0.028226292
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.9820113
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    dropWhenMaturate: 0
   prefab: {fileID: 4181496105866553241, guid: a3e27b2b3ec177045afccaa7f07e3f69, type: 3}
   sizeRessource: 1
   daysToGrow: 1.5

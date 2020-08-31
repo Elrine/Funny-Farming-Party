@@ -12,4 +12,5 @@ public class EnvironementData
     public Quaternion playerRotation = Quaternion.identity;
     public float currentTime;
     public Loader.Scene playerScene = Loader.Scene.OuterWorld;
+    public bool isCreated = false;
 }

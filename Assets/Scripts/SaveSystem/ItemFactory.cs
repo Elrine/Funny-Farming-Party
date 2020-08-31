@@ -21,14 +21,16 @@ public class ItemFactory : MonoBehaviour {
             _instance = this;
             DontDestroyOnLoad (gameObject);
         } else {
-            Destroy (this);
+            Destroy (gameObject);
         }
     }
 
     public ItemData MakeItem (SavableItemData itemData) {
-        foreach (var item in itemType.Find ((item) => item.type == itemData.itemType).ModelList) {
-            if (item.itemName == itemData.itemName) {
-                return item;
+        if (itemType.Find ((item) => item.type == itemData.itemType) != null) {
+            foreach (var item in itemType.Find ((item) => item.type == itemData.itemType).ModelList) {
+                if (item.itemName == itemData.itemName) {
+                    return item;
+                }
             }
         }
         return null;

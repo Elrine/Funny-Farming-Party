@@ -30,7 +30,6 @@ public class LookAtInfo : MonoBehaviour {
 
     void UpdateColision () {
         Ray ray = new Ray (cam.transform.position, cam.transform.forward);
-        Debug.DrawRay (ray.origin, ray.direction * distanceToInfo, Color.red);
         if (Physics.Raycast (ray, out hit, distanceToInfo)) {
             BoxCollider box = hit.collider as BoxCollider;
             targetPlant = box == null ? null : box.GetComponent<Plant> ();

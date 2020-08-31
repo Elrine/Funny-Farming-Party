@@ -59,11 +59,11 @@ public class SelectorCursorUI : MonoBehaviour {
         if (Input.GetKeyDown (KeyCode.Keypad5) || Input.GetKeyDown (KeyCode.Alpha5)) {
             CurrentSelected = 4;
         }
-        if (Input.mouseScrollDelta.y > 1) {
-            CurrentSelected += CurrentSelected == 4 ? 0 : 1;
+        if (Input.mouseScrollDelta.y > .1f) {
+            CurrentSelected = (CurrentSelected + 1) % 5;
         }
-        if (Input.mouseScrollDelta.y < -1) {
-            CurrentSelected -= CurrentSelected == 0 ? 0 : 1;
+        if (Input.mouseScrollDelta.y < -.1f) {
+            CurrentSelected = (CurrentSelected + 4) % 5;
         }
     }
 

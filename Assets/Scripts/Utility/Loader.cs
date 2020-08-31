@@ -10,12 +10,16 @@ public static class Loader
         OuterWorld,
         Home,
         Loading,
-        Default
+        Default,
+        Menu
     }
 
     private static Action onLoaderCallback;
 
     public static void LoadScrene(Scene scene) {
+        if (getCurrentScene() == Scene.OuterWorld) {
+            RessouceGenerator.Instance.clearRessource();
+        }
         onLoaderCallback = () => {
             SceneManager.LoadSceneAsync(scene.ToString());
         };

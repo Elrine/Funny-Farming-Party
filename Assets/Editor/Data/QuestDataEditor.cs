@@ -16,7 +16,8 @@ public class QuestDataEditor : Editor {
         QuestData quest = target as QuestData;
 
         initBool (quest);
-        if (showRewards == null || showRewards.Length != quest.rewards.Length) {
+        if (quest != null) {
+        if (showRewards != null && showRewards.Length != quest.rewards.Length) {
             bool[] oldShowReward = showRewards;
             for (int i = quest.rewards.Length; oldShowReward != null && i < oldShowReward.Length; i++) {
                 oldShowReward[i] = false;
@@ -31,7 +32,7 @@ public class QuestDataEditor : Editor {
             }
         }
 
-        if (showSteps == null || showSteps.Length != quest.steps.Length) {
+        if (showSteps != null && showSteps.Length != quest.steps.Length) {
             bool[] oldShowStep = showSteps;
             for (int i = quest.steps.Length; oldShowStep != null && i < oldShowStep.Length; i++) {
                 oldShowStep[i] = false;
@@ -45,6 +46,7 @@ public class QuestDataEditor : Editor {
                 }
             }
         }
+        }
 
         EditorGUILayout.PropertyField (serializedObject.FindProperty ("questName"));
         EditorGUILayout.PropertyField (serializedObject.FindProperty ("questDescription"));
@@ -55,13 +57,17 @@ public class QuestDataEditor : Editor {
     }
 
     void initBool (QuestData quest) {
-
+        if (showRewards == null)
+            showRewards = new bool[0];
+        if (showSteps == null)
+            showSteps = new bool[0];
     }
 
     void ShowRewardList (QuestData quest) {
         showReward = EditorGUILayout.Foldout (showReward, "Rewards");
-        
-        if (showReward) {EditorGUI.indentLevel += 1;
+
+        if (showReward) {
+            EditorGUI.indentLevel += 1;
             for (int i = 0; i < serializedObject.FindProperty ("rewards.Array.size").intValue &&
                 i < quest.rewards.Length; i++) {
                 EditorGUILayout.BeginHorizontal ("Box");
@@ -77,6 +83,9 @@ public class QuestDataEditor : Editor {
                         case RewardData.RewardType.Gold:
                             EditorGUILayout.PropertyField (serializedObject.FindProperty ("rewards.Array").GetArrayElementAtIndex (i).FindPropertyRelative ("gold"));
                             break;
+                        case RewardData.RewardType.LaunchQuest:
+                            EditorGUILayout.PropertyField (serializedObject.FindProperty ("rewards.Array").GetArrayElementAtIndex (i).FindPropertyRelative ("nextQuest"));
+                            break;
                     }
                     EditorGUI.indentLevel -= 1;
                 }
@@ -84,9 +93,9 @@ public class QuestDataEditor : Editor {
                 ShowButtons (serializedObject.FindProperty ("rewards.Array"), i, ref showRewards);
                 EditorGUILayout.EndHorizontal ();
             }
-        EditorGUI.indentLevel -= 1;
-        GUIContent addReward = new GUIContent ("+", "add reward");
-            if (GUILayout.Button(addReward)) {
+            EditorGUI.indentLevel -= 1;
+            GUIContent addReward = new GUIContent ("+", "add reward");
+            if (GUILayout.Button (addReward)) {
                 serializedObject.FindProperty ("rewards.Array").InsertArrayElementAtIndex (0);
             }
         }
@@ -123,7 +132,7 @@ public class QuestDataEditor : Editor {
             }
             EditorGUI.indentLevel -= 1;
             GUIContent addStep = new GUIContent ("+", "add step");
-            if (GUILayout.Button(addStep)) {
+            if (GUILayout.Button (addStep)) {
                 serializedObject.FindProperty ("steps.Array").InsertArrayElementAtIndex (0);
             }
         }

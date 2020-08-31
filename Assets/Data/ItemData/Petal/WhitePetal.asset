@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f458a91804131f84a88c64ae0b59e80c, type: 3}
   m_Name: WhitePetal
   m_EditorClassIdentifier: 
-  itemName: WhitePetal
+  itemName: White Petal
   itemDescription: 
   itemInWorld: {fileID: 0}
   itemInHUD: {fileID: 2800000, guid: 15870b803c27ab34ba7ce0fa9e6f8e53, type: 3}
-  goldValue: 10
+  attribute: 4
+  attributeLevel: 10
+  goldValue: 20

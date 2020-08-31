@@ -8,7 +8,6 @@ public class LookAtShop : MonoBehaviour {
     void Update () {
         if (Input.GetMouseButton (0) && !InventoryPlayer.Instance.inventoryShown) {
             Ray ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
-            Debug.DrawRay (ray.origin, ray.direction, Color.black, 2.5f);
             RaycastHit hit;
             if (Physics.Raycast (ray, out hit, distanceToSee)) {
                 ShopControler shop = hit.collider.GetComponent<ShopControler> ();

@@ -19,6 +19,7 @@ public class ItemData : ScriptableObject
     public enum ItemType {
         SeedType,
         ToolType,
+        SpellType,
         RessourceType,
         OtherType
     }
@@ -27,6 +28,9 @@ public class ItemData : ScriptableObject
             return ItemType.OtherType;
         }
     }
+    
+    public Attribute attribute = Attribute.Neutral;
+    public int attributeLevel;
     public int goldValue;
 
     public SavableItemData ToSavableData() {
@@ -42,3 +46,13 @@ public class SavableItemData {
     public string itemName;
     public ItemData.ItemType itemType;
 }
+
+public enum Attribute {
+        Earth,
+        Water,
+        Air,
+        Fire,
+        Order,
+        Chaos,
+        Neutral
+    }

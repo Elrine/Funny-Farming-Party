@@ -7,11 +7,12 @@ public abstract class RessourceAbstact : MonoBehaviour {
     [SerializeField]
     public RessourceData ressourceType = null;
     protected bool isMature = true;
+    public Vector2 posInGrid = Vector2.zero;
 
     public void Harvest () {
         RessourceData.Drop[] dropList = ressourceType.dropItem;
         Array.Sort (dropList, new RessourceData.Drop.SortByDropRate ());
-        float percent = UnityEngine.Random.Range (0, 10000) / 10000;
+        float percent = UnityEngine.Random.Range (0, 10000) / 10000f;
         foreach (var drop in dropList) {
             if (percent <= drop.dropRate && (!drop.dropWhenMaturate || isMature)) {
                 int numberOfDrop;

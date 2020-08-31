@@ -21,6 +21,10 @@ public class Plant : RessourceAbstact {
         }
         set {
             currentGrowth = value;
+            if (currentGrowth > 1) {
+                currentGrowth = 1;
+                isMature = true;
+            }
         }
     }
 
@@ -58,19 +62,19 @@ public class Plant : RessourceAbstact {
         if (currentGrowth < 1) {
             float deltaTime;
             if (lastUpdate == -1)
-            deltaTime = clock.getDeltaTime ();
+                deltaTime = clock.getDeltaTime ();
             else {
-            deltaTime = clock.getDeltaTime(lastUpdate);
-            lastUpdate = -1;
+                deltaTime = clock.getDeltaTime (lastUpdate);
+                lastUpdate = -1;
             }
-            currentGrowth += deltaTime / plantType.seedOf.daysToGrow;
-            if (currentGrowth > 1) {
-                currentGrowth = 1;
-                isMature = true;
-            }
+            CurrentGrowth += deltaTime / plantType.seedOf.daysToGrow;
         } else if (!isMature) {
             isMature = true;
         }
+    }
+
+    public void AccelerateGrow(float delta) {
+        CurrentGrowth += delta / plantType.seedOf.daysToGrow;
     }
 
     void ScaleToGrow () {
@@ -130,22 +134,22 @@ public class Plant : RessourceAbstact {
         }
     }
 
-    protected override void OnHarvesting()
-    {
-        GameObject.Destroy(gameObject);
+    protected override void OnHarvesting () {
+        RessouceGenerator.Instance.removeRessource (posInGrid);
+        GameObject.Destroy (gameObject);
     }
 
-    public void SetVisble(bool visible) {
+    public void SetVisble (bool visible) {
         if (!visible) {
             lastUpdate = Time.time;
         }
-        gameObject.SetActive(visible);
+        gameObject.SetActive (visible);
     }
 
-    public override SavableRessourceAbstact ToSavableData() {
-        SavablePlant toSave = new SavablePlant();
-        Grow();
-        toSave.data = ressourceType.ToSavableData();
+    public override SavableRessourceAbstact ToSavableData () {
+        SavablePlant toSave = new SavablePlant ();
+        Grow ();
+        toSave.data = ressourceType.ToSavableData ();
         toSave.currentGrowth = currentGrowth;
         return toSave;
     }

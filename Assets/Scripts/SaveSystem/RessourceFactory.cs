@@ -21,7 +21,7 @@ public class RessourceFactory : MonoBehaviour {
             _instance = this;
             DontDestroyOnLoad (gameObject);
         } else {
-            Destroy (this);
+            Destroy (gameObject);
         }
     }
 

@@ -32,6 +32,7 @@ public class SaveManager : MonoBehaviour {
         env.playerRotation = player.transform.rotation;
         env.playerScene = Loader.getCurrentScene ();
         env.currentTime = DayNightCycle.Instance.currentTime;
+        env.isCreated = true;
     }
 
     public void SaveWorld () {
@@ -40,16 +41,16 @@ public class SaveManager : MonoBehaviour {
         saveObject.env = env;
         saveObject.listRessource = RessouceGenerator.Instance.ToSavableData ();
         saveObject.inventoryPlayer = InventoryPlayer.Inventory.ToSavableData ();
+        saveObject.questPlayer = QuestManager.ToSavableData ();
         string data = JsonUtility.ToJson (saveObject);
         SaveSystem.Save (environementName, data);
     }
 
     private IEnumerator setEnv (EnvironementData newEnv) {
         env = newEnv;
-        if (Loader.getCurrentScene () != env.playerScene) {
-            Loader.LoadScrene (env.playerScene);
-            yield return new WaitWhile (() => Loader.getCurrentScene () != env.playerScene);
-        }
+        Teleport.disableTeleport = true;
+        Loader.LoadScrene (env.playerScene);
+        yield return new WaitWhile (() => Loader.getCurrentScene () != env.playerScene);
         GameObject player = null;
         while (player == null) {
             player = GameObject.FindWithTag ("Player");
@@ -57,9 +58,13 @@ public class SaveManager : MonoBehaviour {
         }
         player.transform.SetPositionAndRotation (env.playerPosition, env.playerRotation);
         DayNightCycle.Instance.currentTime = env.currentTime;
+        Teleport.disableTeleport = false;
+        if (env.playerScene == Loader.Scene.OuterWorld)
+            StartCoroutine (RessouceGenerator.Instance.placeSavedRessource ());
     }
 
     public void createWorld () {
+        env = new EnvironementData();
         Loader.LoadScrene (Loader.Scene.OuterWorld);
     }
 
@@ -67,9 +72,11 @@ public class SaveManager : MonoBehaviour {
         string data = SaveSystem.Load (environementName);
         if (data != null) {
             saveObject = JsonUtility.FromJson<SaveData> (data);
+            Loader.Scene currentScene = Loader.getCurrentScene ();
             StartCoroutine (setEnv (saveObject.env));
             RessouceGenerator.listSavedRessource = saveObject.listRessource;
             InventoryPlayer.setSavedInventory (saveObject.inventoryPlayer);
+            QuestManager.SetSavableData (saveObject.questPlayer);
         }
     }
 
@@ -77,14 +84,6 @@ public class SaveManager : MonoBehaviour {
         if (timeout >= 0) {
             timeout += Time.unscaledDeltaTime;
             Debug.LogFormat ("timeout:{0}, instance of inventory: {1}, should finish wait {2}", timeout, InventoryPlayer.Instance != null, InventoryPlayer.Instance != null || timeout > 120);
-        }
-        if (Loader.getCurrentScene () != Loader.Scene.Default) {
-            if (Input.GetKeyDown (KeyCode.M)) {
-                SaveWorld ();
-            }
-            if (Input.GetKeyDown (KeyCode.L)) {
-                LoadWorld ();
-            }
         }
     }
 
@@ -101,4 +100,5 @@ public class SaveData {
     public EnvironementData env;
     public List<SavableRessource> listRessource;
     public SavableInventoryData inventoryPlayer;
+    public List<SavableQuest> questPlayer;
 }

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a13adbdcf59fc4f973f0b88ead8811, type: 3}
+  m_Name: Quest02
+  m_EditorClassIdentifier: 
+  questName: New Season
+  questDescription: Testing quest selector
+  rewards:
+  - type: 0
+    gold: 100
+    item:
+      data: {fileID: 11400000, guid: f360d452e849ca141b55a958f50f92bb, type: 2}
+      sizeStack: 5
+    nextQuest: {fileID: 0}
+  - type: 0
+    gold: 100
+    item:
+      data: {fileID: 11400000, guid: 0b3a69cf0b08c9a40894069c4ab53a69, type: 2}
+      sizeStack: 5
+    nextQuest: {fileID: 0}
+  - type: 0
+    gold: 10
+    item:
+      data: {fileID: 11400000, guid: 25752c05704938e4587e4c8e1753f2e7, type: 2}
+      sizeStack: 5
+    nextQuest: {fileID: 0}
+  - type: 0
+    gold: 10
+    item:
+      data: {fileID: 11400000, guid: 8dcb0e17116fef6458f16bec041ff919, type: 2}
+      sizeStack: 5
+    nextQuest: {fileID: 0}
+  - type: 2
+    gold: 10
+    item:
+      data: {fileID: 11400000, guid: b97a8c9a85086ac4792da88b2ceba445, type: 2}
+      sizeStack: 50
+    nextQuest: {fileID: 11400000}
+  steps:
+  - type: 0
+    collectParams:
+      item: {fileID: 11400000, guid: f45a158d861cdff49a9685b04b94e504, type: 2}
+      needed: 5
+    killParams:
+      target: 
+      needed: 0
+    talkParams:
+      target: 
+  - type: 0
+    collectParams:
+      item: {fileID: 11400000, guid: c21c64a5266923a4c83a22b74f4433bc, type: 2}
+      needed: 5
+    killParams:
+      target: 
+      needed: 0
+    talkParams:
+      target: 

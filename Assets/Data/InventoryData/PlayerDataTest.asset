@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542e54cb59538e941bd0102e610a04ba, type: 3}
   m_Name: PlayerDataTest
   m_EditorClassIdentifier: 
-  inventoryContent: []
-  gold: 100
+  inventoryContent:
+  - pos: {x: 0, y: 0}
+    itemStack:
+      data: {fileID: 11400000, guid: f360d452e849ca141b55a958f50f92bb, type: 2}
+      sizeStack: 10
+  gold: 10

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
+public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
     public ItemStack itemStack = null;
     public Canvas canvas = null;
     public SlotUI fromSlot = null;
@@ -13,9 +13,14 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
     private bool inSlot = false;
+    private bool pointerOverItem = false;
+    [SerializeField]
+    private float tooltipDelay = 3;
 
     public void OnBeginDrag (PointerEventData eventData) {
         canvasGroup.blocksRaycasts = false;
+        pointerOverItem = false;
+        Tooltip.HideTooltip_static();
         canvasGroup.alpha = .6f;
         transform.SetParent(GameObject.FindGameObjectWithTag("DragCanvas").transform);
     }
@@ -85,5 +90,23 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public void removeItem() {
         fromSlot.removeCurrentItem();
         Destroy(gameObject);
+    }
+
+    public void OnPointerEnter (PointerEventData eventData) {
+        pointerOverItem = true;
+        Debug.LogFormat("Pointer Enter slot {0}", itemStack.data.itemName);
+        StartCoroutine (ShowTooltip ());
+    }
+
+    private IEnumerator ShowTooltip () {
+        yield return new WaitForSeconds (tooltipDelay);
+        if (pointerOverItem) {
+            Tooltip.ShowTooltip_static (itemStack);
+        }
+    }
+
+    public void OnPointerExit (PointerEventData eventData) {
+        pointerOverItem = false;
+        Tooltip.HideTooltip_static ();
     }
 }

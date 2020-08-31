@@ -61,7 +61,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    dropWhenMaturate: 0
+    dropWhenMaturate: 1
   - item: {fileID: 11400000, guid: d306cb4503f77754cbfcce079d686746, type: 2}
     dropRate: 1
     minDrop: 2

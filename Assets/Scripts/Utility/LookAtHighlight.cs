@@ -29,7 +29,6 @@ public class LookAtHighlight : MonoBehaviour {
         Transform cam = Camera.main.transform;
         Ray ray = new Ray (cam.position, cam.forward);
         RaycastHit hit;
-        Debug.DrawRay (ray.origin, ray.direction * distanceToHit, Color.red);
         if (Physics.Raycast (ray.origin, ray.direction, out hit, distanceToHit)) {
             MeshCollider meshCollider = hit.collider as MeshCollider;
             if (meshCollider == null || meshCollider.sharedMesh == null || !meshCollider.gameObject.CompareTag ("Chunk")) {

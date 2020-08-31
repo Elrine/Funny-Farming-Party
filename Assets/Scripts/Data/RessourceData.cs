@@ -13,6 +13,7 @@ public class RessourceData : ScriptableObject {
     
     public enum RessourceType {
         PlantType,
+        EnemyType,
         OtherType
     }
     public virtual RessourceType GetRessourceType {

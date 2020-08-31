@@ -17,6 +17,9 @@ public class InventoryPlayer : IInventory {
     public SelectorCursorUI cursor = null;
     [SerializeField]
     private Text goldText = null;
+
+    [SerializeField]
+    private Text currentItemText = null;
     public int Gold {
         get {
             return inventoryData.gold;
@@ -53,6 +56,7 @@ public class InventoryPlayer : IInventory {
     public enum SlotType {
         Plant,
         Tools,
+        Spell,
         Other,
         Empty
     }
@@ -92,16 +96,20 @@ public class InventoryPlayer : IInventory {
         for (int y = 0; y < sizeInventory / sizeInventoryBar; y++) {
             for (int x = 0; x < sizeRowInventory && x + y * sizeInventoryBar < sizeInventory; x++) {
                 Vector2 cursor = new Vector2 (x, y);
+                bool findInInventory = false;
                 foreach (var slot in inventoryData.inventoryContent) {
                     if (slot.pos == cursor) {
-                        if (slot.itemStack.data == stack.data) {
+                        if (slot.itemStack.data.itemName == stack.data.itemName) {
                             slot.itemStack.sizeStack += stack.sizeStack;
                             NotifyUpdate (slot);
                             return true;
+                        } else {
+                            findInInventory = true;
+                            break;
                         }
                     }
                 }
-                if (emptySlot == Vector2.one * -1) {
+                if (emptySlot == Vector2.one * -1 && !findInInventory) {
                     emptySlot = cursor;
                 }
             }
@@ -200,16 +208,15 @@ public class InventoryPlayer : IInventory {
     }
 
     private void Awake () {
-        _instance = this;
-        initInventory ();
-        if (background != null)
-            background.GetComponent<RectTransform> ().anchoredPosition = offsetBackground;
+        if (_instance != null) {
+            Destroy (gameObject);
+        } else {
+            _instance = this;
+            initInventory ();
+            if (background != null)
+                background.GetComponent<RectTransform> ().anchoredPosition = offsetBackground;
+        }
     }
-
-    private void OnDestroy () {
-        _instance = null;
-    }
-
     public void setUIVisible (bool visible) {
         showInventory = visible;
         SlotUI slot;
@@ -240,6 +247,12 @@ public class InventoryPlayer : IInventory {
         if (Input.GetKeyDown (KeyCode.I)) {
             setUIVisible (!showInventory);
         }
+        ItemData data = getCurrentSlot ();
+        if (data == null) {
+            currentItemText.text = "";
+        } else if (data.itemName != currentItemText.text) {
+            currentItemText.text = data.itemName;
+        }
     }
 
     public ItemData getCurrentSlot () {
@@ -251,7 +264,16 @@ public class InventoryPlayer : IInventory {
         return null;
     }
 
-    public void RemoveItem (Vector2 pos, uint number = 1) {
+    public int getCurrentStackSize () {
+        Vector2 pos = new Vector2 (cursor.CurrentSelected, 0);
+        foreach (var slot in inventoryData.inventoryContent) {
+            if (slot.pos == pos)
+                return slot.itemStack.sizeStack;
+        }
+        return 0;
+    }
+
+    public void RemoveItem (Vector2 pos, int number = 1) {
         foreach (var slot in inventoryData.inventoryContent) {
             if (slot.pos == pos) {
                 ItemStack stack = slot.itemStack;
@@ -275,12 +297,14 @@ public class InventoryPlayer : IInventory {
                 return SlotType.Plant;
             case ItemData.ItemType.ToolType:
                 return SlotType.Tools;
+            case ItemData.ItemType.SpellType:
+                return SlotType.Spell;
             default:
                 return SlotType.Other;
         }
     }
 
-    public void RemoveCurrentItem (uint number = 1) {
+    public void RemoveCurrentItem (int number = 1) {
         RemoveItem (new Vector2 (cursor.CurrentSelected, 0), number);
     }
 
@@ -294,9 +318,11 @@ public class InventoryPlayer : IInventory {
         data.gold = savedData.gold;
         foreach (var _slot in savedData.inventoryContent) {
             ItemData item = ItemFactory.Instance.MakeItem (_slot.itemStack.data);
-            ItemStack stack = new ItemStack (item, _slot.itemStack.sizeStack);
-            InventoryData.InventorySlot slot = new InventoryData.InventorySlot (_slot.pos, stack);
-            data.inventoryContent.Add (slot);
+            if (item) {
+                ItemStack stack = new ItemStack (item, _slot.itemStack.sizeStack);
+                InventoryData.InventorySlot slot = new InventoryData.InventorySlot (_slot.pos, stack);
+                data.inventoryContent.Add (slot);
+            }
         }
         inventoryData = data;
         if (_instance != null) {

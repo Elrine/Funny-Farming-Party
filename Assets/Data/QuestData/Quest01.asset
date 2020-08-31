@@ -13,13 +13,44 @@ MonoBehaviour:
   m_Name: Quest01
   m_EditorClassIdentifier: 
   questName: First step
-  questDescription: '"I finally "'
+  questDescription: 'I finnaly manage to create a protal to the outerworld.
+
+    Now,
+    I will be able to cultivate some elemantal flower form my spell.
+
+    Let''s
+    begin with some earth flower'
   rewards:
+  - type: 2
+    gold: 0
+    item:
+      data: {fileID: 11400000, guid: 0b3a69cf0b08c9a40894069c4ab53a69, type: 2}
+      sizeStack: 5
+    nextQuest: {fileID: 11400000, guid: 3cc8c9bfa5428f9428809ea5f7e6ee21, type: 2}
   - type: 0
     gold: 0
     item:
       data: {fileID: 11400000, guid: 0b3a69cf0b08c9a40894069c4ab53a69, type: 2}
       sizeStack: 5
+    nextQuest: {fileID: 0}
+  - type: 0
+    gold: 0
+    item:
+      data: {fileID: 11400000, guid: f360d452e849ca141b55a958f50f92bb, type: 2}
+      sizeStack: 5
+    nextQuest: {fileID: 0}
+  - type: 1
+    gold: 50
+    item:
+      data: {fileID: 11400000, guid: 0b3a69cf0b08c9a40894069c4ab53a69, type: 2}
+      sizeStack: 5
+    nextQuest: {fileID: 0}
+  - type: 2
+    gold: 100
+    item:
+      data: {fileID: 11400000, guid: b97a8c9a85086ac4792da88b2ceba445, type: 2}
+      sizeStack: 100
+    nextQuest: {fileID: 11400000, guid: ade235c5351a6b445a950b2ab3861117, type: 2}
   steps:
   - type: 0
     collectParams:

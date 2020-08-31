@@ -42,10 +42,26 @@ public class DayNightCycle : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        UpdateMinutePerDay ();
         UpdateTimeScale ();
         UpdateCurrentTime ();
         UpdateLight ();
         updateMaterial ();
+    }
+
+    private void UpdateMinutePerDay () {
+        if (Input.GetKey (KeyCode.BackQuote)) {
+            if (Input.GetKeyDown (KeyCode.Keypad0))
+                _minutePerDay = 24;
+            if (Input.GetKeyDown (KeyCode.Keypad1))
+                _minutePerDay = 12;
+            if (Input.GetKeyDown (KeyCode.Keypad2))
+                _minutePerDay = 5;
+            if (Input.GetKeyDown (KeyCode.Keypad3))
+                _minutePerDay = 1;
+            if (Input.GetKeyDown (KeyCode.Keypad4))
+                _minutePerDay = .1f;
+        }
     }
 
     void UpdateCurrentTime () {
@@ -74,7 +90,7 @@ public class DayNightCycle : MonoBehaviour {
     public float getDeltaTime () {
         return Time.deltaTime * _timeScale / 86400;
     }
-    
+
     public float getDeltaTime (float prevTime) {
         return (Time.time - prevTime) * _timeScale / 86400;
     }

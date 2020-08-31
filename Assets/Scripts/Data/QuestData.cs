@@ -17,11 +17,13 @@ public class QuestData : ScriptableObject {
 public class RewardData {
     public enum RewardType {
         Item,
-        Gold
+        Gold,
+        LaunchQuest
     }
     public RewardType type;
     public int gold;
     public ItemStack item;
+    public QuestData nextQuest;
 }
 
 [System.Serializable]

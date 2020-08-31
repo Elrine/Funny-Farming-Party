@@ -103,6 +103,7 @@ MonoBehaviour:
     sizeStack: 0
   canvas: {fileID: 0}
   fromSlot: {fileID: 0}
+  tooltipDelay: 1
 --- !u!1 &6201480059497820994
 GameObject:
   m_ObjectHideFlags: 0

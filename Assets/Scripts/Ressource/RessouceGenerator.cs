@@ -22,7 +22,7 @@ public class RessouceGenerator : MonoBehaviour {
         }
     }
 
-    public bool placeValid (Vector2 pos, RessourceData toPlace) {
+    public bool placeValid (Vector2 pos) {
         Vector3 posPortal = SaveManager.Instance.env.portalPosition;
         Vector2 posPortalInGrid = new Vector2 (posPortal.x, posPortal.z);
         if (listRessource.Exists (ressource => ressource.pos == pos) || (pos - posPortalInGrid).sqrMagnitude < 4) {
@@ -32,11 +32,14 @@ public class RessouceGenerator : MonoBehaviour {
     }
 
     public GameObject placeRessource (Vector3 pos, RessourceData toPlace) {
+        if (toPlace == null)
+        return null;
         Vector2 posInGrid = new Vector2 (pos.x, pos.z);
-        if (placeValid (posInGrid, toPlace)) {
+        if (placeValid (posInGrid)) {
             GameObject placed = GameObject.Instantiate (toPlace.prefab, pos, Quaternion.identity);
             if (placed != null) {
                 Ressource newRessource = new Ressource (posInGrid, placed.GetComponent<RessourceAbstact> ());
+                placed.GetComponent<RessourceAbstact>().posInGrid = posInGrid;
                 listRessource.Add (newRessource);
             }
             return placed;
@@ -106,10 +109,14 @@ public class RessouceGenerator : MonoBehaviour {
     }
 
     public void clearRessource () {
-        foreach (var ressource in listRessource) {
-            Destroy (ressource.ressource.gameObject);
+        Debug.Log("Clear Ressource");
+        if (Loader.Scene.OuterWorld == Loader.getCurrentScene ()) {
+            foreach (var ressource in listRessource) {
+                if (ressource.ressource.gameObject != null)
+                Destroy (ressource.ressource.gameObject);
+            }
+            listRessource.Clear ();
         }
-        listRessource.Clear ();
     }
 
     public void removeRessource (Vector2 pos) {
@@ -141,6 +148,7 @@ public class RessouceGenerator : MonoBehaviour {
     }
 
     public void saveRessource () {
+        Debug.Log("Save Ressource");
         listSavedRessource = ToSavableData ();
     }
 }

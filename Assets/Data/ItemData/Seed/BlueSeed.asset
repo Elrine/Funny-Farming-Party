@@ -17,5 +17,7 @@ MonoBehaviour:
   itemInWorld: {fileID: 7772795868961400528, guid: ac12f971d501a4944821887997e7ac8c,
     type: 3}
   itemInHUD: {fileID: 2800000, guid: e77fb4f9d15e4b345b92fa84be2c9a3f, type: 3}
-  goldValue: 3
+  attribute: 1
+  attributeLevel: 1
+  goldValue: 2
   seedOf: {fileID: 11400000, guid: a9cce2c2695b34847883fee2f8713f87, type: 2}

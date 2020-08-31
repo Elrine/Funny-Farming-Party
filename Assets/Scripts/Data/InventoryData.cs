@@ -49,8 +49,8 @@ public class SavableInventorySlot {
 [System.Serializable]
 public class ItemStack {
     public ItemData data;
-    public uint sizeStack;
-    public ItemStack (ItemData _data, uint _sizeStack = 1) {
+    public int sizeStack;
+    public ItemStack (ItemData _data, int _sizeStack = 1) {
         data = _data;
         sizeStack = _sizeStack;
     }
@@ -66,5 +66,5 @@ public class ItemStack {
 [System.Serializable]
 public class SavableItemStack {
     public SavableItemData data;
-    public uint sizeStack;
+    public int sizeStack;
 }

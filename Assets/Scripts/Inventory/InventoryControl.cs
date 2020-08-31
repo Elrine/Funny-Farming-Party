@@ -17,19 +17,38 @@ public class InventoryControl : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (InventoryPlayer.Instance != null && !InventoryPlayer.Instance.inventoryShown) {
+        if (InventoryPlayer.Instance != null && Loader.getCurrentScene() == Loader.Scene.OuterWorld && !InventoryPlayer.Instance.inventoryShown && Menu.Instance != null && !Menu.Instance.isShown) {
             UpdateColision ();
             PlaceRessource ();
         }
+
+        if (Input.GetMouseButtonDown (0) && InventoryPlayer.Instance.getCurrentSlotType () == InventoryPlayer.SlotType.Spell) {
+            SpellData spell = InventoryPlayer.Instance.getCurrentSlot () as SpellData;
+            SpellManager.StartCasting (spell);
+            StartCoroutine (Casting());
+        }
+    }
+
+    IEnumerator Casting () {
+        while (Input.GetMouseButton (0)) {
+            yield return new WaitForSeconds (.1f);
+            if (SpellManager.CurrentStrength < InventoryPlayer.Instance.getCurrentStackSize ())
+                SpellManager.AddingStrength ();
+            else if ((InventoryPlayer.Instance.getCurrentSlot () as SpellData).target == SpellData.TargetType.Ray) {
+                break;
+            }
+        }
+        InventoryPlayer.Instance.RemoveCurrentItem(SpellManager.CurrentStrength);
+        SpellManager.StopCasting ();
     }
 
     public void PlaceRessource () {
-        if (InventoryPlayer.Instance.getCurrentSlot () && InventoryPlayer.Instance.getCurrentSlot ().GetItemType == ItemData.ItemType.SeedType) {
+        if (InventoryPlayer.Instance.getCurrentSlot () && InventoryPlayer.Instance.getCurrentSlot ().GetItemType == ItemData.ItemType.SeedType && Loader.getCurrentScene () == Loader.Scene.OuterWorld) {
             SeedData seed = InventoryPlayer.Instance.getCurrentSlot () as SeedData;
             Vector2 targetPosOnGrid = new Vector2 (targetPos.x, targetPos.z);
             Vector3 portalPos = SaveManager.Instance.env.portalPosition;
-            float disToPortal = Vector3.Distance(portalPos, targetPos);
-            if (targetPos != Vector3.zero && RessouceGenerator.Instance.placeValid (targetPosOnGrid, seed.seedOf) && disToPortal <= SaveManager.Instance.env.forceFieldSize) {
+            float disToPortal = Vector3.Distance (portalPos, targetPos);
+            if (targetPos != Vector3.zero && RessouceGenerator.Instance.placeValid (targetPosOnGrid) && disToPortal <= SaveManager.Instance.env.forceFieldSize) {
                 if (oldIndicator == null) {
                     if (indicatorPrefab == null)
                         oldIndicator = GameObject.CreatePrimitive (PrimitiveType.Sphere);
@@ -59,7 +78,6 @@ public class InventoryControl : MonoBehaviour {
     public void UpdateColision () {
         if (Camera.main != null) {
             Ray ray = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
-            Debug.DrawRay (ray.origin, ray.direction * distanceToPlace, Color.red);
             RaycastHit[] allHit = Physics.RaycastAll (ray, distanceToPlace);
             bool hitChunk = false;
             bool hitRessource = false;
@@ -69,7 +87,7 @@ public class InventoryControl : MonoBehaviour {
                     hitChunk = true;
                     hit = _hit;
                 }
-                if (Input.GetMouseButtonDown (0) && slotType != InventoryPlayer.SlotType.Plant && _hit.collider.gameObject.CompareTag ("Plant")) {
+                if (Input.GetMouseButtonDown (0) && slotType != InventoryPlayer.SlotType.Spell && _hit.collider.gameObject.CompareTag ("PlantRessource")) {
                     hitRessource = true;
                     hit = _hit;
                 }
@@ -83,6 +101,7 @@ public class InventoryControl : MonoBehaviour {
                     targetPos = Vector3.zero;
             } else {
                 targetPos = Vector3.zero;
+                Debug.DrawRay (ray.origin, ray.direction * distanceToPlace, Color.red);
                 if (hitRessource) {
                     BoxCollider ressourceCollider = hit.collider as BoxCollider;
                     if (ressourceCollider) {

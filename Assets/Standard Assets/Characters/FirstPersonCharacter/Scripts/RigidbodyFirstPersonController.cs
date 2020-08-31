@@ -129,10 +129,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            if (Input.GetKeyDown(KeyCode.Escape)) {
-                Debug.Break();
-            }
-
             if (Input.GetButtonDown("Jump") && !m_Jump)
             {
                 m_Jump = true;
